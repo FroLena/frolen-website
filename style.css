@@ -212,5 +212,28 @@ footer {
 
   .product img {
     height: 160px;
-  }
+  /* Блок преимуществ на главной */
+.highlights {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2.5rem 0;
+  text-align: center;
 }
+
+.highlight-item {
+  background: white;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px var(--shadow);
+  min-width: 200px;
+  font-size: 0.95rem;
+  color: var(--brown);
+}
+
+/* Призыв к действию */
+.cta {
+  margin: 2.5rem 0;
+}
+
