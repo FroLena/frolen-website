@@ -36,6 +36,12 @@ body {
   padding: 0 20px;
 }
 
+/* Уменьшаем отступы между блоками на главной */
+.container > * {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
 /* Шапка */
 header {
   text-align: center;
@@ -132,6 +138,11 @@ h1 {
   background: #f5f0e6;
 }
 
+/* Увеличим фото для популярных товаров на главной */
+.featured-products .product img {
+  height: 220px;
+}
+
 .product-info {
   padding: 1.2rem;
 }
@@ -173,6 +184,37 @@ h1 {
   background: #556b2f;
 }
 
+/* Блок преимуществ на главной */
+.highlights {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1.5rem 0;
+  text-align: center;
+}
+
+.highlight-item {
+  background: white;
+  padding: 0.8rem 1rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px var(--shadow);
+  min-width: 200px;
+  font-size: 0.95rem;
+  color: var(--brown);
+  transition: transform 0.2s;
+}
+
+.highlight-item:hover {
+  transform: translateY(-2px);
+}
+
+/* Призыв к действию */
+.cta {
+  text-align: center;
+  margin: 2rem 0;
+}
+
 /* Футер */
 footer {
   text-align: center;
@@ -198,6 +240,10 @@ footer {
     height: 180px;
   }
 
+  .featured-products .product img {
+    height: 200px;
+  }
+
   .products {
     gap: 1.2rem;
   }
@@ -212,28 +258,16 @@ footer {
 
   .product img {
     height: 160px;
-  /* Блок преимуществ на главной */
-.highlights {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
-  margin: 2.5rem 0;
-  text-align: center;
-}
+  }
 
-.highlight-item {
-  background: white;
-  padding: 1rem;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px var(--shadow);
-  min-width: 200px;
-  font-size: 0.95rem;
-  color: var(--brown);
-}
+  .featured-products .product img {
+    height: 180px;
+  }
 
-/* Призыв к действию */
-.cta {
-  margin: 2.5rem 0;
+  .highlight-item {
+    min-width: 160px;
+    padding: 0.7rem 0.9rem;
+    font-size: 0.9rem;
+  }
 }
 
