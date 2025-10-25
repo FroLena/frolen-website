@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ФроЛен ЕКБ — Натуральное мыло ручной работы</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+    body { background: #fdf6f0; color: #333; line-height: 1.6; }
+    header { text-align: center; padding: 2rem 1rem; background: white; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+    h1 { font-size: 2.2rem; color: #5d4037; margin-bottom: 0.5rem; }
+    .subtitle { color: #8d6e63; font-size: 1.1rem; }
+    .container { max-width: 1200px; margin: 2rem auto; padding: 0 1rem; }
+    .category { margin-bottom: 3rem; }
+    .category h2 { font-size: 1.8rem; color: #5d4037; margin-bottom: 1.5rem; padding-bottom: 0.5rem; border-bottom: 2px solid #d7ccc8; }
+    .products { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; }
+    .product { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.08); transition: transform 0.2s; }
+    .product:hover { transform: translateY(-4px); }
+    .product img { width: 100%; height: 200px; object-fit: cover; background: #efebe9; }
+    .product-info { padding: 1rem; }
+    .product h3 { font-size: 1.2rem; margin-bottom: 0.5rem; color: #4e342e; }
+    .price { font-weight: bold; color: #5d4037; font-size: 1.1rem; margin: 0.5rem 0; }
+    .desc { font-size: 0.95rem; color: #666; margin-bottom: 1rem; }
+    .btn { display: inline-block; background: #8d6e63; color: white; text-decoration: none; padding: 0.6rem 1rem; border-radius: 6px; font-weight: 500; transition: background 0.2s; }
+    .btn:hover { background: #6d4c41; }
+    footer { text-align: center; padding: 2rem 1rem; background: white; margin-top: 3rem; border-top: 1px solid #eee; }
+    @media (max-width: 600px) {
+      .products { grid-template-columns: 1fr; }
+      h1 { font-size: 1.8rem; }
+      h2 { font-size: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>🌿🧼 ФроЛен ЕКБ</h1>
+  <p class="subtitle">Натуральное мыло и свечи ручной работы</p>
+</header>
+
+<div class="container">
+
+  <section class="category">
+    <h2>🌸 Мыло</h2>
+    <div class="products">
+
+      <div class="product">
+        <img src="photos/mylo/kalendula.webp" alt="Календула">
+        <div class="product-info">
+          <h3>Календула</h3>
+          <div class="price">270 ₽</div>
+          <p class="desc">Состав: омыленные масла(инфуз календулы на хлопковом масле), вода, порошок календулы, лактат натрия, цитрат натрия, хлорид натрия.</p>
+        </div>
+      </div>
+    
+
+      <div class="product">
+        <img src="photos/mylo/aloe.webp" alt="Алоэ">
+        <div class="product-info">
+          <h3>Алоэ</h3>
+          <div class="price">280 ₽</div>
+          <p class="desc">Состав: омыленные масла(хлопковое), жмых алоэ, сок алоэ, лактат натрия, цитрат натрия, хлорид натрия.</p>
+        </div>
+      </div>
+    
+
+      <div class="product">
+        <img src="photos/mylo/morkovnoe.webp" alt="Морковное">
+        <div class="product-info">
+          <h3>Морковное</h3>
+          <div class="price">250 ₽</div>
+          <p class="desc">Состав: омыленные масла (хлопковое), вода, пюре моркови, лактат натрия, цитрат натрия.</p>
+        </div>
+      </div>
+    
+
+      <div class="product">
+        <img src="photos/mylo/ogurechnoe.webp" alt="Огуречное">
+        <div class="product-info">
+          <h3>Огуречное</h3>
+          <div class="price">200 ₽</div>
+          <p class="desc">Состав: омыленные масла(хлопковое), сок огурца, лактат натрия, цитрат натрия, жмых огурца.</p>
+        </div>
+      </div>
+    
+
+      <div class="product">
+        <img src="photos/mylo/letnee_lukoshko.webp" alt="Летнее Лукошко">
+        <div class="product-info">
+          <h3>Летнее Лукошко</h3>
+          <div class="price">250 ₽</div>
+          <p class="desc">Состав: омыленные масла (кокосовое, пальмовое, инфуз розы на высокоолеиновом масле, касторовое, зародышей пшеницы) вода, лактат натрия, цитрат натрия, косметическая отдушка.</p>
+        </div>
+      </div>
+    
+
+      <div class="product">
+        <img src="photos/mylo/medovoe.webp" alt="Медовое">
+        <div class="product-info">
+          <h3>Медовое</h3>
+          <div class="price">350 ₽</div>
+          <p class="desc">Состав: омыленные масла(пальмовое, кокосовое, миндальное, облепиховое, касторовое, высокоолеиновое) вода, мёд, лактат натрия, цитрат натрия, отдушка косметическая.</p>
+        </div>
+      </div>
+    
+
+      <div class="product">
+        <img src="photos/mylo/shungit.webp" alt="Шунгит">
+        <div class="product-info">
+          <h3>Шунгит</h3>
+          <div class="price">350 ₽</div>
+          <p class="desc">Состав: омыленные масла(пальмоядровое, пальмовое, кокосовое, высокоолеиновое подсолнечное, касторовое), отвар эвкалипта, лактат натрия, цитрат натрия, отдушка косметическая, шунгит.</p>
+        </div>
+      </div>
+    
+    </div>
+  </section>
+    
+  <section class="category">
+    <h2>🌿 Пробники и аксессуары</h2>
+    <div class="products">
+
+      <div class="product">
+        <img src="photos/probniki/nabor_probnikov_iz_5_lyubykh_sortov.webp" alt="Набор пробников из 5 любых сортов">
+        <div class="product-info">
+          <h3>Набор пробников из 5 любых сортов</h3>
+          <div class="price">300 ₽</div>
+          <p class="desc">Кофейное, Медовое, Шунгит, Солнечная магия, Лавандовый вечер, Шелковое, Богемская Роза, Ромашковый рай, Три глины, Мужская сила, Пенное наслаждение, Мыло с грязью Сакского озера</p>
+        </div>
+      </div>
+    
+
+      <div class="product">
+        <img src="photos/probniki/nabor_probnikov_iz_3_lyubykh_sortov.webp" alt="Набор пробников из 3 любых сортов">
+        <div class="product-info">
+          <h3>Набор пробников из 3 любых сортов</h3>
+          <div class="price">200 ₽</div>
+          <p class="desc">Кофейное, Медовое, Шунгит, Солнечная магия, Лавандовый вечер, Шелковое, Богемская Роза, Ромашковый рай, Три глины, Мужская сила, Пенное наслаждение, Мыло с грязью Сакского озера</p>
+        </div>
+      </div>
+    
+
+      <div class="product">
+        <img src="photos/probniki/balzam_dlya_gub.webp" alt="Бальзам для Губ">
+        <div class="product-info">
+          <h3>Бальзам для Губ</h3>
+          <div class="price">150 ₽</div>
+          <p class="desc">Состав: хлопковое масло, пчелиный воск, витамин Е.</p>
+        </div>
+      </div>
+    
+
+      <div class="product">
+        <img src="photos/probniki/beldi_apelsinovoe.webp" alt="Бельди Апельсиновое">
+        <div class="product-info">
+          <h3>Бельди Апельсиновое</h3>
+          <div class="price">450 ₽</div>
+          <p class="desc">Апельсиновое бельди — это натуральное мыло, разработанное на основе традиционного марокканского бельди с добавлением инфуза и сока апельсина. Оно сочетает в себе все преимущества бельди и полезные свойства цитруса. Состав: омыленные масла (кокосовое, авокадо, высокоолеиновое подсолнечное, касторовое), сок апельсина, лактат натрия, цитрат натрия, эфирное масло Апельсин.</p>
+        </div>
+      </div>
+    
+
+      <div class="product">
+        <img src="photos/probniki/beldi_vinnoe.webp" alt="Бельди винное">
+        <div class="product-info">
+          <h3>Бельди винное</h3>
+          <div class="price">540 ₽</div>
+          <p class="desc">Винное бельди — это уникальная разновидность традиционного марокканского мыла. Это мыло сочетает в себе все полезные свойства классического бельди, но дополнительно обогащено антиоксидантами, содержащимися в вине. Состав: омыленные масла (кокосовое, пальмовое, высокоолеиновое подсолнечное, касторовое), неомыляемые масла — виноградной косточки, выпаренное красное сухое вино, лактат натрия, цитрат натрия, отдушка Гранатовый сидр.</p>
+        </div>
+      </div>
+    
+
+      <div class="product">
+        <img src="photos/probniki/vannochka_dlya_nog.webp" alt="Ванночка для ног">
+        <div class="product-info">
+          <h3>Ванночка для ног</h3>
+          <div class="price">150 ₽</div>
+          <p class="desc">Ванночка для ног готовится из расчета 1 ст. ложка соли на 1 литр воды. Вода должна быть оптимальной температуры – 36-38 градусов. Если во время приема ванночки она успевает остыть, можно добавить горячей. Не обязательно дожидаться полного растворения кристаллов. Солевые крупинки обеспечат массажный эффект. Вес: 130 гр.</p>
+        </div>
+      </div>
+    
+
+      <div class="product">
+        <img src="photos/probniki/lavandovyy_meshochek_15_gr.webp" alt="Лавандовый мешочек 15 гр">
+        <div class="product-info">
+          <h3>Лавандовый мешочек 15 гр</h3>
+          <div class="price">100 ₽</div>
+          <p class="desc">Лавандовый мешочек – это небольшой контейнер, наполненный сухими цветами лаванды.</p>
+        </div>
+      </div>
+    
+    </div>
+  </section>
+    
+  <section class="category">
+    <h2>🕯️ Свечи</h2>
+    <div class="products">
+
+      <div class="product">
+        <img src="photos/svechi/svecha_853.webp" alt="Свеча 8,53">
+        <div class="product-info">
+          <h3>Свеча 8,53</h3>
+          <div class="price">150 ₽</div>
+          <p class="desc">Высота - 8,5 см, Диаметр - 3 см</p>
+        </div>
+      </div>
+    
+
+      <div class="product">
+        <img src="photos/svechi/svecha_133.webp" alt="Свеча 133">
+        <div class="product-info">
+          <h3>Свеча 133</h3>
+          <div class="price">200 ₽</div>
+          <p class="desc">Высота - 13 см, Диаметр - 3 см</p>
+        </div>
+      </div>
+    
+
+      <div class="product">
+        <img src="photos/svechi/svecha_82.webp" alt="Свеча 82">
+        <div class="product-info">
+          <h3>Свеча 82</h3>
+          <div class="price">100 ₽</div>
+          <p class="desc">Высота - 8 см, Диаметр - 2 см</p>
+        </div>
+      </div>
+    
+
+      <div class="product">
+        <img src="photos/svechi/svecha_952.webp" alt="Свеча 9,52">
+        <div class="product-info">
+          <h3>Свеча 9,52</h3>
+          <div class="price">150 ₽</div>
+          <p class="desc">Высота - 9,5 см, Диаметр - 2 см</p>
+        </div>
+      </div>
+    
+    </div>
+  </section>
+    
+</div>
+
+<footer>
+  <p>Хотите заказать или уточнить детали?</p>
+  <a href="https://t.me/frolen_ekb" class="btn" target="_blank">📩 Написать в Telegram</a>
+  <p style="margin-top: 1rem; font-size: 0.9rem; color: #888;">
+    Доставка по Екатеринбургу • Натуральный состав • Ручная работа
+  </p>
+</footer>
+
+</body>
+</html>
