@@ -9,37 +9,41 @@
 <body>
 
 <header>
-  <img src="logo.webp" alt="ФроЛен ЕКБ" class="logo">
-  <h1>🌿🧼 ФроЛен ЕКБ</h1>
-  <p class="subtitle">Натуральное мыло и свечи ручной работы</p>
+  <div class="header-top">
+    <img src="logo.webp" alt="ФроЛен ЕКБ" class="logo">
+    <div class="branding">
+      <h1>🌿🧼 ФроЛен ЕКБ</h1>
+      <p class="subtitle">Натуральное мыло и свечи ручной работы</p>
+    </div>
+  </div>
+
+  <nav class="main-nav">
+    <a href="index.html">Главная</a>
+    <a href="mylo.html">Мыло</a>
+    <a href="probniki.html">Пробники</a>
+    <a href="svechi.html">Свечи</a>
+    <a href="dostavka.html">Доставка</a>
+    <a href="cart.html" class="active cart-link">🛒 <span id="cart-count">0</span></a>
+  </nav>
 </header>
 
-<nav class="main-nav">
-  <a href="index.html">Главная</a>
-  <a href="mylo.html">Мыло</a>
-  <a href="probniki.html">Пробники</a>
-  <a href="svechi.html">Свечи</a>
-  <a href="dostavka.html">Доставка</a>
-  <a href="cart.html" class="active cart-link">🛒 <span id="cart-count">0</span></a>
-</nav>
+<div class="container cart-container">
 
-<div class="container" style="max-width: 800px; margin: 2rem auto; padding: 0 1rem;">
-
-  <h2 style="text-align: center; margin-bottom: 1.5rem;">🛒 Ваша корзина</h2>
+  <h2 class="section-title">🛒 Ваша корзина</h2>
 
   <div id="cart-content">
     <!-- Сюда подгрузится содержимое корзины -->
   </div>
 
-  <div id="cart-total" style="text-align: right; font-size: 1.3rem; margin: 1.5rem 0; font-weight: bold; display: none;">
+  <div id="cart-total" class="cart-total">
     Итого: <span id="total-amount">0</span> ₽
   </div>
 
-  <div style="text-align: center; margin-top: 2rem;">
-    <a href="https://t.me/parentvoeimamy" class="btn" target="_blank" style="background: #e67e22; color: white; padding: 0.8rem 1.5rem; text-decoration: none; border-radius: 6px; display: inline-block;">
+  <div class="cart-cta">
+    <a href="https://t.me/parentvoeimamy" class="btn btn-orange" target="_blank">
       Оформить заказ в Telegram
     </a>
-    <p style="margin-top: 1rem; font-size: 0.95rem; color: #555;">
+    <p class="cart-hint">
       Напишите, что хотите заказать — мы всё уточним и договоримся о доставке!
     </p>
   </div>
@@ -49,7 +53,7 @@
 <footer>
   <p>Хотите заказать или уточнить детали?</p>
   <a href="https://t.me/parentvoeimamy" class="btn" target="_blank">📩 Написать в Telegram</a>
-  <p style="margin-top: 1rem; font-size: 0.9rem; color: #888;">
+  <p class="footer-note">
     Доставка по Екатеринбургу • Натуральный состав • Ручная работа
   </p>
 </footer>
@@ -75,8 +79,8 @@
 </noscript>
 <!-- /Yandex.Metrika counter -->
 
+<!-- Скрипт отображения корзины -->
 <script>
-  // Отображение корзины
   document.addEventListener('DOMContentLoaded', () => {
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
     const cartContent = document.getElementById('cart-content');
@@ -84,15 +88,14 @@
     const cartTotalEl = document.getElementById('cart-total');
     const cartCountEl = document.getElementById('cart-count');
 
-    // Обновляем счётчик в шапке
     const totalCount = cart.reduce((sum, item) => sum + item.quantity, 0);
     if (cartCountEl) cartCountEl.textContent = totalCount;
 
     if (cart.length === 0) {
       cartContent.innerHTML = `
-        <p style="text-align: center; font-size: 1.2rem; color: #666;">
+        <p class="cart-empty">
           Ваша корзина пуста 😢<br>
-          <a href="index.html" style="color: #e67e22; text-decoration: underline;">Вернуться в каталог</a>
+          <a href="index.html" class="cart-empty-link">Вернуться в каталог</a>
         </p>
       `;
       cartTotalEl.style.display = 'none';
@@ -104,12 +107,12 @@
         const itemTotal = item.price * item.quantity;
         total += itemTotal;
         html += `
-          <div style="display: flex; gap: 1rem; padding: 1.2rem 0; border-bottom: 1px solid #eee; align-items: flex-start;">
-            <img src="${item.image}" alt="${item.name}" style="width: 70px; height: 70px; object-fit: cover; border-radius: 4px; flex-shrink: 0;">
-            <div style="flex: 1;">
-              <h3 style="margin: 0 0 0.3rem; font-size: 1.1rem;">${item.name}</h3>
-              <p style="margin: 0.3rem 0; color: #555;">${item.price} ₽ × ${item.quantity}</p>
-              <p style="margin: 0.3rem 0; color: #222; font-weight: bold;">${itemTotal} ₽</p>
+          <div class="cart-item">
+            <img src="${item.image}" alt="${item.name}" class="cart-item-img">
+            <div class="cart-item-info">
+              <h3>${item.name}</h3>
+              <p>${item.price} ₽ × ${item.quantity}</p>
+              <p class="cart-item-total">${itemTotal} ₽</p>
             </div>
           </div>
         `;
@@ -122,5 +125,7 @@
   });
 </script>
 
+<!-- Подключаем cart.js для синхронизации счётчика на других страницах -->
+<script src="cart.js"></script>
 </body>
 </html>
