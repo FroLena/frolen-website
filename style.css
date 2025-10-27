@@ -540,4 +540,42 @@ footer {
     width: 60px;
     height: 60px;
   }
+/* Форма заказа в корзине */
+.cart-cta h3 {
+  font-size: 1.3rem;
+  color: var(--brown);
+  margin-bottom: 1rem;
+}
+
+.form-group {
+  margin-bottom: 1.2rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-weight: 600;
+  color: var(--brown);
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.65rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-family: 'Lora', serif;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: var(--olive);
+  box-shadow: 0 0 0 2px rgba(107, 142, 35, 0.2);
+}
+
+.error {
+  color: #e74c3c;
+  font-size: 0.85rem;
+  margin-top: 0.3rem;
+  min-height: 1.2rem;
 }
