@@ -271,3 +271,54 @@ footer {
   }
 }
 
+/* Корзина */
+.cart-link {
+  position: relative;
+  text-decoration: none;
+  color: inherit;
+  font-weight: bold;
+  margin-left: auto;
+}
+#cart-count {
+  background: #e67e22;
+  color: white;
+  border-radius: 10px;
+  padding: 2px 6px;
+  font-size: 0.85rem;
+  margin-left: 4px;
+}
+
+/* Кнопки в карточке */
+.product-actions {
+  display: flex;
+  gap: 0.6rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+.btn-secondary {
+  background: #f8f9fa;
+  color: #333;
+  border: 1px solid #ddd;
+  padding: 0.5rem 0.8rem;
+  border-radius: 6px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 0.95rem;
+  transition: all 0.2s;
+}
+.btn-secondary:hover {
+  background: #e9ecef;
+}
+.btn-primary {
+  background: #e67e22;
+  color: white;
+  border: none;
+  padding: 0.5rem 0.8rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: background 0.2s;
+}
+.btn-primary:hover {
+  background: #d35400;
+}
