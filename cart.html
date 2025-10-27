@@ -40,11 +40,24 @@
   </div>
 
   <div class="cart-cta">
-    <a href="https://t.me/parentvoeimamy" class="btn btn-orange" target="_blank">
-      Оформить заказ в Telegram
-    </a>
+    <h3 style="text-align: center; margin-bottom: 1rem;">Оформить заказ</h3>
+    <form id="order-form">
+      <div class="form-group">
+        <label for="customer-name">Ваше имя:</label>
+        <input type="text" id="customer-name" required placeholder="Например, Анна">
+        <div class="error" id="name-error"></div>
+      </div>
+      <div class="form-group">
+        <label for="customer-phone">Телефон для связи:</label>
+        <input type="tel" id="customer-phone" required placeholder="+7 (999) 123-45-67">
+        <div class="error" id="phone-error"></div>
+      </div>
+      <button type="submit" class="btn btn-orange">
+        Оформить заказ в Telegram
+      </button>
+    </form>
     <p class="cart-hint">
-      Напишите, что хотите заказать — мы всё уточним и договоримся о доставке!
+      После нажатия откроется Telegram — просто отправьте сообщение.
     </p>
   </div>
 
@@ -79,8 +92,9 @@
 </noscript>
 <!-- /Yandex.Metrika counter -->
 
-<!-- Скрипт отображения корзины -->
+<!-- Скрипт отображения корзины и отправки заказа -->
 <script>
+  // Отображение корзины
   document.addEventListener('DOMContentLoaded', () => {
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
     const cartContent = document.getElementById('cart-content');
@@ -123,9 +137,59 @@
       cartTotalEl.style.display = 'block';
     }
   });
+
+  // Валидация и отправка заказа
+  document.getElementById('order-form')?.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    // Сброс ошибок
+    document.querySelectorAll('.error').forEach(el => el.textContent = '');
+    
+    const name = document.getElementById('customer-name').value.trim();
+    const phone = document.getElementById('customer-phone').value.trim();
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    let hasError = false;
+
+    if (!name) {
+      document.getElementById('name-error').textContent = 'Пожалуйста, укажите имя.';
+      hasError = true;
+    }
+
+    // Валидация российского номера телефона
+    const phoneRegex = /^(\+?7|8)?[\s\-]?\(?[489]\d{2}\)?[\s\-]?\d{3}[\s\-]?\d{2}[\s\-]?\d{2}$/;
+    if (!phone) {
+      document.getElementById('phone-error').textContent = 'Пожалуйста, укажите телефон.';
+      hasError = true;
+    } else if (!phoneRegex.test(phone.replace(/\s+/g, ' '))) {
+      document.getElementById('phone-error').textContent = 'Введите корректный номер (например, +7 912 345-67-89).';
+      hasError = true;
+    }
+
+    if (cart.length === 0) {
+      alert('Корзина пуста!');
+      return;
+    }
+
+    if (hasError) return;
+
+    // Формируем сообщение
+    let itemsText = '';
+    let total = 0;
+    cart.forEach(item => {
+      const itemTotal = item.price * item.quantity;
+      total += itemTotal;
+      itemsText += `• ${item.name} — ${item.price} ₽ × ${item.quantity}\n`;
+    });
+
+    const message = `🛒 Новый заказ!\n\nИмя: ${name}\nТелефон: ${phone}\n\nТовары:\n${itemsText}Итого: ${total} ₽`;
+    const encodedMessage = encodeURIComponent(message);
+    const telegramUrl = `https://t.me/parentvoeimamy?text=${encodedMessage}`;
+
+    window.open(telegramUrl, '_blank');
+  });
 </script>
 
-<!-- Подключаем cart.js для синхронизации счётчика на других страницах -->
 <script src="cart.js"></script>
 </body>
 </html>
