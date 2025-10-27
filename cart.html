@@ -187,6 +187,23 @@
     const telegramUrl = `https://t.me/parentvoeimamy?text=${encodedMessage}`;
 
     window.open(telegramUrl, '_blank');
+
+    // 🔥 Очищаем корзину после отправки
+    localStorage.removeItem('cart');
+    if (document.getElementById('cart-count')) {
+      document.getElementById('cart-count').textContent = '0';
+    }
+    if (document.getElementById('cart-content')) {
+      document.getElementById('cart-content').innerHTML = `
+        <p class="cart-empty">
+          Ваш заказ отправлен! Спасибо 🌿<br>
+          <a href="index.html" class="cart-empty-link">Продолжить покупки</a>
+        </p>
+      `;
+    }
+    if (document.getElementById('cart-total')) {
+      document.getElementById('cart-total').style.display = 'none';
+    }
   });
 </script>
 
