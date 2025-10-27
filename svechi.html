@@ -20,6 +20,7 @@
   <a href="probniki.html">Пробники</a>
   <a href="svechi.html" class="active">Свечи</a>
   <a href="dostavka.html">Доставка</a>
+  <a href="cart.html" class="cart-link">🛒 <span id="cart-count">0</span></a>
 </nav>
 
 <div class="container">
@@ -34,7 +35,14 @@
           <h3>Свеча 8,53</h3>
           <div class="price">150 ₽</div>
           <p class="desc">Высота - 8,5 см, Диаметр - 3 см</p>
-          <a href="products/svecha_853.html" class="btn">Подробнее</a>
+          <div class="product-actions">
+            <a href="products/svecha_853.html" class="btn-secondary">Подробнее</a>
+            <button class="btn-primary add-to-cart"
+                    data-id="svecha_853"
+                    data-name="Свеча 8,53"
+                    data-price="150"
+                    data-image="photos/svechi/svecha_853.webp">Заказать</button>
+          </div>
         </div>
       </div>
 
@@ -44,7 +52,14 @@
           <h3>Свеча 133</h3>
           <div class="price">200 ₽</div>
           <p class="desc">Высота - 13 см, Диаметр - 3 см</p>
-          <a href="products/svecha_133.html" class="btn">Подробнее</a>
+          <div class="product-actions">
+            <a href="products/svecha_133.html" class="btn-secondary">Подробнее</a>
+            <button class="btn-primary add-to-cart"
+                    data-id="svecha_133"
+                    data-name="Свеча 133"
+                    data-price="200"
+                    data-image="photos/svechi/svecha_133.webp">Заказать</button>
+          </div>
         </div>
       </div>
 
@@ -54,7 +69,14 @@
           <h3>Свеча 82</h3>
           <div class="price">100 ₽</div>
           <p class="desc">Высота - 8 см, Диаметр - 2 см</p>
-          <a href="products/svecha_82.html" class="btn">Подробнее</a>
+          <div class="product-actions">
+            <a href="products/svecha_82.html" class="btn-secondary">Подробнее</a>
+            <button class="btn-primary add-to-cart"
+                    data-id="svecha_82"
+                    data-name="Свеча 82"
+                    data-price="100"
+                    data-image="photos/svechi/svecha_82.webp">Заказать</button>
+          </div>
         </div>
       </div>
 
@@ -64,7 +86,14 @@
           <h3>Свеча 9,52</h3>
           <div class="price">150 ₽</div>
           <p class="desc">Высота - 9,5 см, Диаметр - 2 см</p>
-          <a href="products/svecha_952.html" class="btn">Подробнее</a>
+          <div class="product-actions">
+            <a href="products/svecha_952.html" class="btn-secondary">Подробнее</a>
+            <button class="btn-primary add-to-cart"
+                    data-id="svecha_952"
+                    data-name="Свеча 9,52"
+                    data-price="150"
+                    data-image="photos/svechi/svecha_952.webp">Заказать</button>
+          </div>
         </div>
       </div>
 
@@ -101,6 +130,7 @@
   </div>
 </noscript>
 <!-- /Yandex.Metrika counter -->
-  
+
+<script src="cart.js"></script>
 </body>
 </html>
