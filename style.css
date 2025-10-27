@@ -128,6 +128,10 @@ body {
   padding: 0.5rem 0.8rem;
   border-radius: 6px;
   transition: background 0.2s;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .main-nav a:hover {
@@ -149,12 +153,19 @@ body {
   border-bottom: 2px solid var(--pink);
 }
 
-/* Сетка товаров */
+/* Сетка товаров — мобильная оптимизация */
 .products {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 1.8rem;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
   margin-bottom: 2rem;
+}
+
+@media (min-width: 769px) {
+  .products {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.8rem;
+  }
 }
 
 /* Карточка товара */
@@ -214,6 +225,16 @@ body {
   flex-wrap: wrap;
 }
 
+.btn-secondary,
+.btn-primary,
+.btn {
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
 .btn-secondary {
   background: #f8f9fa;
   color: #333;
@@ -221,7 +242,6 @@ body {
   padding: 0.5rem 0.8rem;
   border-radius: 6px;
   text-decoration: none;
-  display: inline-block;
   font-size: 0.95rem;
   transition: background 0.2s;
 }
@@ -247,15 +267,14 @@ body {
 
 /* Общая кнопка (для CTA и футера) */
 .btn {
-  display: inline-block;
   background: var(--olive);
   color: white;
   text-decoration: none;
   padding: 0.65rem 1.2rem;
   border-radius: 24px;
   font-weight: bold;
-  transition: background 0.2s;
   font-size: 0.95rem;
+  transition: background 0.2s;
 }
 
 .btn:hover {
@@ -304,6 +323,7 @@ body {
   font-weight: bold;
   text-decoration: none;
   transition: background 0.2s;
+  min-height: 44px;
 }
 
 .cart-link:hover {
@@ -350,6 +370,10 @@ body {
   border-radius: 6px;
   display: inline-block;
   text-decoration: none;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .btn-orange:hover {
@@ -364,7 +388,8 @@ body {
 
 .cart-item {
   display: flex;
-  gap: 1rem;
+  flex-direction: column;
+  gap: 0.8rem;
   padding: 1.2rem 0;
   border-bottom: 1px solid #eee;
   align-items: flex-start;
@@ -447,11 +472,50 @@ footer {
 }
 
 @media (max-width: 480px) {
+  /* Шапка */
+  .header-top {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
+
+  .logo {
+    width: 60px;
+  }
+
+  .branding h1 {
+    font-size: 1.2rem;
+  }
+
+  .branding .subtitle {
+    font-size: 0.85rem;
+  }
+
+  /* Навигация */
   .main-nav {
     flex-direction: column;
     align-items: center;
   }
 
+  .main-nav a {
+    width: 100%;
+    max-width: 200px;
+  }
+
+  /* Текст */
+  body {
+    font-size: 16px;
+  }
+
+  .desc {
+    font-size: 1rem;
+  }
+
+  .price {
+    font-size: 1.3rem;
+  }
+
+  /* Изображения товаров */
   .product img {
     height: 160px;
   }
@@ -464,6 +528,12 @@ footer {
     min-width: 160px;
     padding: 0.7rem 0.9rem;
     font-size: 0.9rem;
+  }
+
+  /* Корзина */
+  .cart-item {
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   .cart-item-img {
