@@ -3,18 +3,27 @@
    Уютный, натуральный, теплый стиль
    ============================= */
 
+/* Шрифты — ДОЛЖНЫ быть первыми */
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Playfair+Display:wght@700&display=swap');
+
 :root {
-  --beige: #f8f3e9; /* кремовый фон */
-  --olive: #6b8e23; /* оливковый акцент */
-  --brown: #3e2723; /* тёмный коричневый текст */
-  --pink: #f4c2c2; /* нежный розовый из логотипа */
+  --beige: #f8f3e9;       /* кремовый фон */
+  --olive: #6b8e23;       /* оливковый акцент */
+  --brown: #3e2723;       /* тёмный коричневый текст */
+  --pink: #f4c2c2;        /* нежный розовый */
+  --orange: #e67e22;      /* тёплый оранжевый для кнопок */
   --shadow: rgba(0, 0, 0, 0.08);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 body {
@@ -22,12 +31,7 @@ body {
   background-color: var(--beige);
   color: var(--brown);
   line-height: 1.6;
-  margin: 0;
-  padding: 0;
 }
-
-/* Подключаем шрифты */
-@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Playfair+Display:wght@700&display=swap');
 
 /* Обёртка для контента */
 .container {
@@ -36,64 +40,69 @@ body {
   padding: 0 20px;
 }
 
-/* Уменьшаем отступы между блоками на главной */
 .container > * {
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
 }
 
 /* Шапка */
-header {
-  text-align: center;
-  padding: 2rem 1rem;
-  background: white;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-  margin-bottom: 2rem;
+.header-top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem 0;
+  background: #fff;
 }
 
 .logo {
-  max-width: 140px;
+  width: 80px;
   height: auto;
-  margin-bottom: 1rem;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
   border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 }
 
-h1 {
+.branding {
+  text-align: center;
+}
+
+.branding h1 {
+  margin: 0;
   font-family: 'Playfair Display', serif;
-  font-size: 2.4rem;
+  font-size: 1.5rem;
   color: var(--brown);
-  margin-bottom: 0.5rem;
 }
 
-.subtitle {
+.branding .subtitle {
+  margin: 0.2rem 0 0;
+  font-size: 0.9rem;
   color: var(--olive);
-  font-size: 1.1rem;
-  font-family: 'Lora', serif;
 }
 
-/* Навигационное меню */
+/* Навигация */
 .main-nav {
   display: flex;
   justify-content: center;
-  gap: 1.5rem;
-  margin: 1.5rem 0;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+  background: #f8f8f8;
+  border-top: 1px solid #eee;
+  font-size: 0.95rem;
   flex-wrap: wrap;
 }
 
 .main-nav a {
   text-decoration: none;
-  color: var(--olive);
-  font-weight: 600;
-  padding: 6px 12px;
-  border-radius: 20px;
+  color: #555;
+  padding: 0.5rem 0.8rem;
+  border-radius: 6px;
   transition: background 0.2s;
 }
 
-.main-nav a:hover,
+.main-nav a:hover {
+  background: #e9ecef;
+}
+
 .main-nav a.active {
   background: var(--pink);
   color: var(--brown);
@@ -138,7 +147,6 @@ h1 {
   background: #f5f0e6;
 }
 
-/* Увеличим фото для популярных товаров на главной */
 .featured-products .product img {
   height: 220px;
 }
@@ -167,7 +175,46 @@ h1 {
   line-height: 1.5;
 }
 
-/* Кнопка */
+/* Кнопки в карточке */
+.product-actions {
+  display: flex;
+  gap: 0.6rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn-secondary {
+  background: #f8f9fa;
+  color: #333;
+  border: 1px solid #ddd;
+  padding: 0.5rem 0.8rem;
+  border-radius: 6px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 0.95rem;
+  transition: background 0.2s;
+}
+
+.btn-secondary:hover {
+  background: #e9ecef;
+}
+
+.btn-primary {
+  background: var(--orange);
+  color: white;
+  border: none;
+  padding: 0.5rem 0.8rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: background 0.2s;
+}
+
+.btn-primary:hover {
+  background: #d35400;
+}
+
+/* Общая кнопка (для CTA и футера) */
 .btn {
   display: inline-block;
   background: var(--olive);
@@ -184,7 +231,7 @@ h1 {
   background: #556b2f;
 }
 
-/* Блок преимуществ на главной */
+/* Блок преимуществ */
 .highlights {
   display: flex;
   flex-wrap: wrap;
@@ -215,6 +262,31 @@ h1 {
   margin: 2rem 0;
 }
 
+/* Корзина */
+.cart-link {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.5rem 0.8rem;
+  border-radius: 6px;
+  color: #333;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.cart-link:hover {
+  background: #e9ecef;
+}
+
+#cart-count {
+  background: var(--orange);
+  color: white;
+  border-radius: 10px;
+  padding: 2px 6px;
+  font-size: 0.85rem;
+}
+
 /* Футер */
 footer {
   text-align: center;
@@ -228,8 +300,8 @@ footer {
 
 /* Адаптивность */
 @media (max-width: 768px) {
-  h1 {
-    font-size: 1.9rem;
+  .branding h1 {
+    font-size: 1.3rem;
   }
 
   .category h2 {
@@ -251,7 +323,6 @@ footer {
 
 @media (max-width: 480px) {
   .main-nav {
-    gap: 0.8rem;
     flex-direction: column;
     align-items: center;
   }
@@ -269,140 +340,4 @@ footer {
     padding: 0.7rem 0.9rem;
     font-size: 0.9rem;
   }
-}
-
-/* Корзина */
-.cart-link {
-  position: relative;
-  text-decoration: none;
-  color: inherit;
-  font-weight: bold;
-  margin-left: auto;
-}
-#cart-count {
-  background: #e67e22;
-  color: white;
-  border-radius: 10px;
-  padding: 2px 6px;
-  font-size: 0.85rem;
-  margin-left: 4px;
-}
-
-/* Кнопки в карточке */
-.product-actions {
-  display: flex;
-  gap: 0.6rem;
-  margin-top: 1rem;
-  flex-wrap: wrap;
-}
-.btn-secondary {
-  background: #f8f9fa;
-  color: #333;
-  border: 1px solid #ddd;
-  padding: 0.5rem 0.8rem;
-  border-radius: 6px;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 0.95rem;
-  transition: all 0.2s;
-}
-.btn-secondary:hover {
-  background: #e9ecef;
-}
-.btn-primary {
-  background: #e67e22;
-  color: white;
-  border: none;
-  padding: 0.5rem 0.8rem;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 0.95rem;
-  transition: background 0.2s;
-}
-.btn-primary:hover {
-  background: #d35400;
-}
-
-/* Шапка */
-.header-top {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  padding: 1rem 0;
-  background: #fff;
-}
-
-.logo {
-  width: 80px;
-  height: auto;
-  border-radius: 8px;
-}
-
-.branding {
-  text-align: center;
-}
-
-.branding h1 {
-  margin: 0;
-  font-size: 1.5rem;
-  color: #333;
-}
-
-.branding .subtitle {
-  margin: 0.2rem 0 0;
-  font-size: 0.9rem;
-  color: #666;
-}
-
-/* Навигация */
-.main-nav {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  padding: 0.75rem 1rem;
-  background: #f8f8f8;
-  border-top: 1px solid #eee;
-  font-size: 0.95rem;
-}
-
-.main-nav a {
-  text-decoration: none;
-  padding: 0.5rem 0.8rem;
-  border-radius: 6px;
-  transition: all 0.2s;
-  color: #555;
-}
-
-.main-nav a:hover {
-  background: #e9ecef;
-}
-
-.main-nav a.active {
-  background: #f0d9e0; /* Розовый фон для активной страницы */
-  color: #333;
-}
-
-/* Корзина */
-.cart-link {
-  display: flex;
-  align-items: center;
-  gap: 0.3rem;
-  padding: 0.5rem 0.8rem;
-  border-radius: 6px;
-  color: #333;
-  font-weight: bold;
-  transition: background 0.2s;
-}
-
-.cart-link:hover {
-  background: #e9ecef;
-}
-
-#cart-count {
-  background: #e67e22;
-  color: white;
-  border-radius: 10px;
-  padding: 2px 6px;
-  font-size: 0.85rem;
 }
