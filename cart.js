@@ -29,7 +29,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
       localStorage.setItem('cart', JSON.stringify(cart));
       updateCartCount();
-
+    button.style.backgroundColor = '#d35400';
+setTimeout(() => {
+  button.style.backgroundColor = '';
+}, 500);
+      
     });
   });
 });
