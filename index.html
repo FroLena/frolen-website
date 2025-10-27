@@ -20,6 +20,7 @@
   <a href="probniki.html">Пробники</a>
   <a href="svechi.html">Свечи</a>
   <a href="dostavka.html">Доставка</a>
+  <a href="cart.html" class="cart-link">🛒 <span id="cart-count">0</span></a>
 </nav>
 
 <div class="container">
@@ -52,7 +53,14 @@
         <h3>Календула</h3>
         <div class="price">270 ₽</div>
         <p class="desc">Омыленные масла (инфуз календулы на хлопковом масле), вода, порошок календулы.</p>
-        <a href="products/kalendula.html" class="btn">Подробнее</a>
+        <div class="product-actions">
+          <a href="products/kalendula.html" class="btn-secondary">Подробнее</a>
+          <button class="btn-primary add-to-cart"
+                  data-id="kalendula"
+                  data-name="Календула"
+                  data-price="270"
+                  data-image="photos/mylo/kalendula.webp">Заказать</button>
+        </div>
       </div>
     </div>
 
@@ -62,7 +70,14 @@
         <h3>Медовое</h3>
         <div class="price">350 ₽</div>
         <p class="desc">Омыленные масла (пальмовое, кокосовое, миндальное, облепиховое), мёд, отдушка.</p>
-        <a href="products/medovoe.html" class="btn">Подробнее</a>
+        <div class="product-actions">
+          <a href="products/medovoe.html" class="btn-secondary">Подробнее</a>
+          <button class="btn-primary add-to-cart"
+                  data-id="medovoe"
+                  data-name="Медовое"
+                  data-price="350"
+                  data-image="photos/mylo/medovoe.webp">Заказать</button>
+        </div>
       </div>
     </div>
 
@@ -72,7 +87,14 @@
         <h3>Шунгит</h3>
         <div class="price">350 ₽</div>
         <p class="desc">Омыленные масла, отвар эвкалипта, шунгит, отдушка косметическая.</p>
-        <a href="products/shungit.html" class="btn">Подробнее</a>
+        <div class="product-actions">
+          <a href="products/shungit.html" class="btn-secondary">Подробнее</a>
+          <button class="btn-primary add-to-cart"
+                  data-id="shungit"
+                  data-name="Шунгит"
+                  data-price="350"
+                  data-image="photos/mylo/shungit.webp">Заказать</button>
+        </div>
       </div>
     </div>
 
@@ -93,7 +115,7 @@
   </p>
 </footer>
 
-  <!-- Yandex.Metrika counter -->
+<!-- Yandex.Metrika counter -->
 <script type="text/javascript">
   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
@@ -113,6 +135,7 @@
   </div>
 </noscript>
 <!-- /Yandex.Metrika counter -->
-  
+
+<script src="cart.js"></script>
 </body>
 </html>
