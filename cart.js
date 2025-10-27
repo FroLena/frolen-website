@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       localStorage.setItem('cart', JSON.stringify(cart));
       updateCartCount();
-      alert(`«${name}» добавлен(а) в корзину!`);
+
     });
   });
 });
