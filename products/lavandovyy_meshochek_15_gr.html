@@ -3,25 +3,54 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Лавандовый мешочек 15 гр — ФроЛен ЕКБ</title>
-  <meta name="description" content="Натуральный лавандовый мешочек для ароматизации шкафа, сна или релаксации.">
+  <title>Алоэ — ФроЛен ЕКБ</title>
+  <meta name="description" content="Натуральное мыло с алоэ ручной работы. Увлажняет и успокаивает кожу.">
   <link rel="stylesheet" href="../style.css">
 </head>
 <body>
 
+<!-- ЕДИНЫЙ HEADER -->
 <header>
-  <img src="../logo.webp" alt="ФроЛен ЕКБ" class="logo">
-  <h1>🌿🧼 ФроЛен ЕКБ</h1>
-  <p class="subtitle">Натуральное мыло и свечи ручной работы</p>
+  <div class="header-top">
+    <img src="../logo.webp" alt="ФроЛен ЕКБ" class="logo">
+    <div class="branding">
+      <h1>🌿🧼 ФроЛен ЕКБ</h1>
+      <p class="subtitle">Натуральное мыло и свечи ручной работы</p>
+    </div>
+  </div>
+
+  <nav class="main-nav">
+    <a href="../index.html">Главная</a>
+    <a href="../mylo.html">Мыло</a>
+    <a href="../probniki.html">Пробники</a>
+    <a href="../svechi.html">Свечи</a>
+    <a href="../dostavka.html">Доставка</a>
+    <a href="../faq.html">Вопросы</a>
+    <a href="../cart.html" class="cart-link">🛒 <span id="cart-count">0</span></a>
+  </nav>
 </header>
 
-<nav class="main-nav">
-  <a href="../index.html">Главная</a>
-  <a href="../mylo.html">Мыло</a>
-  <a href="../probniki.html">Пробники</a>
-  <a href="../svechi.html">Свечи</a>
-  <a href="../dostavka.html">Доставка</a>
-</nav>
+<!-- Основной контент -->
+<div class="container">
+  <div class="product-detail">
+    <!-- твой контент -->
+  </div>
+</div>
+
+<footer>...</footer>
+
+<!-- Скрипт для корзины -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const count = JSON.parse(localStorage.getItem('cart'))?.reduce((sum, item) => sum + item.quantity, 0) || 0;
+    if (document.getElementById('cart-count')) {
+      document.getElementById('cart-count').textContent = count;
+    }
+  });
+</script>
+
+</body>
+</html>
 
 <div class="container">
 
