@@ -1,30 +1,20 @@
 /* =============================
-   Основные стили сайта "ФроЛен"
-   Уютный, натуральный, теплый стиль
+   Стили сайта "ФроЛен" — оптимизированная версия
    ============================= */
 
-/* Шрифты — ДОЛЖНЫ быть первыми */
 @import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Playfair+Display:wght@700&display=swap');
 
 :root {
-  --beige: #f8f3e9;       /* кремовый фон */
-  --olive: #6b8e23;       /* оливковый акцент */
-  --brown: #3e2723;       /* тёмный коричневый текст */
-  --pink: #f4c2c2;        /* нежный розовый */
-  --orange: #e67e22;      /* тёплый оранжевый для кнопок */
+  --beige: #f8f3e9;
+  --olive: #6b8e23;
+  --brown: #3e2723;
+  --pink: #f4c2c2;
+  --orange: #e67e22;
   --shadow: rgba(0, 0, 0, 0.08);
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-}
+*, *::before, *::after { box-sizing: border-box; }
+* { margin: 0; padding: 0; }
 
 body {
   font-family: 'Lora', serif;
@@ -33,20 +23,16 @@ body {
   line-height: 1.6;
 }
 
-/* Обёртка для контента */
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
 }
 
-/* Отступы между блоками — кроме на странице корзины */
 .container:not(.cart-container) > * {
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
+  margin: 1.5rem 0;
 }
 
-/* Семантические классы */
 .section-title {
   font-family: 'Playfair Display', serif;
   font-size: 1.9rem;
@@ -61,7 +47,7 @@ body {
   color: #888;
 }
 
-/* Инфоблоки (доставка) */
+/* Инфоблоки */
 .info-box {
   background: white;
   padding: 1.2rem;
@@ -69,7 +55,6 @@ body {
   box-shadow: 0 2px 6px var(--shadow);
   margin-bottom: 1rem;
 }
-
 .info-box h3 {
   color: var(--olive);
   margin-bottom: 0.6rem;
@@ -85,25 +70,19 @@ body {
   padding: 1rem 0;
   background: #fff;
 }
-
 .logo {
   width: 80px;
   height: auto;
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 }
-
-.branding {
-  text-align: center;
-}
-
+.branding { text-align: center; }
 .branding h1 {
   margin: 0;
   font-family: 'Playfair Display', serif;
   font-size: 1.5rem;
   color: var(--brown);
 }
-
 .branding .subtitle {
   margin: 0.2rem 0 0;
   font-size: 0.9rem;
@@ -121,7 +100,6 @@ body {
   font-size: 0.95rem;
   flex-wrap: wrap;
 }
-
 .main-nav a {
   text-decoration: none;
   color: #555;
@@ -133,17 +111,13 @@ body {
   align-items: center;
   justify-content: center;
 }
-
-.main-nav a:hover {
-  background: #e9ecef;
-}
-
+.main-nav a:hover { background: #e9ecef; }
 .main-nav a.active {
   background: var(--pink);
   color: var(--brown);
 }
 
-/* Заголовки категорий (для страниц каталога) */
+/* Категории */
 .category h2 {
   font-family: 'Playfair Display', serif;
   font-size: 1.9rem;
@@ -153,14 +127,13 @@ body {
   border-bottom: 2px solid var(--pink);
 }
 
-/* Сетка товаров — мобильная оптимизация */
+/* Товары */
 .products {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1.5rem;
   margin-bottom: 2rem;
 }
-
 @media (min-width: 769px) {
   .products {
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -168,7 +141,6 @@ body {
   }
 }
 
-/* Карточка товара */
 .product {
   background: white;
   border-radius: 16px;
@@ -176,40 +148,29 @@ body {
   box-shadow: 0 4px 12px var(--shadow);
   transition: transform 0.2s ease;
 }
-
 .product:hover {
   transform: translateY(-4px);
   box-shadow: 0 6px 16px var(--shadow);
 }
-
 .product img {
   width: 100%;
   height: 200px;
   object-fit: cover;
   background: #f5f0e6;
 }
-
-.featured-products .product img {
-  height: 220px;
-}
-
-.product-info {
-  padding: 1.2rem;
-}
-
+.featured-products .product img { height: 220px; }
+.product-info { padding: 1.2rem; }
 .product h3 {
   font-size: 1.3rem;
   margin-bottom: 0.6rem;
   color: var(--brown);
 }
-
 .price {
   font-weight: bold;
   color: var(--olive);
   font-size: 1.2em;
   margin: 0.5rem 0;
 }
-
 .desc {
   font-size: 0.95rem;
   color: #555;
@@ -217,71 +178,59 @@ body {
   line-height: 1.5;
 }
 
-/* Кнопки в карточке */
-.product-actions {
-  display: flex;
-  gap: 0.6rem;
-  margin-top: 1rem;
-  flex-wrap: wrap;
-}
-
-.btn-secondary,
-.btn-primary,
+/* Кнопки — унифицированы */
 .btn {
-  min-height: 44px;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
+  min-height: 44px;
+  padding: 0.5rem 0.8rem;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.2s;
+  font-family: 'Lora', serif;
 }
 
 .btn-secondary {
   background: #f8f9fa;
   color: #333;
   border: 1px solid #ddd;
-  padding: 0.5rem 0.8rem;
-  border-radius: 6px;
-  text-decoration: none;
-  font-size: 0.95rem;
-  transition: background 0.2s;
 }
+.btn-secondary:hover { background: #e9ecef; }
 
-.btn-secondary:hover {
-  background: #e9ecef;
-}
-
-.btn-primary {
+.btn-primary,
+.btn-orange {
   background: var(--orange);
   color: white;
   border: none;
-  padding: 0.5rem 0.8rem;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 0.95rem;
-  transition: background 0.2s;
 }
-
-.btn-primary:hover {
+.btn-primary:hover,
+.btn-orange:hover {
   background: #d35400;
 }
 
-/* Общая кнопка (для CTA и футера) */
 .btn {
   background: var(--olive);
   color: white;
-  text-decoration: none;
   padding: 0.65rem 1.2rem;
   border-radius: 24px;
   font-weight: bold;
-  font-size: 0.95rem;
-  transition: background 0.2s;
+}
+.btn:hover { background: #556b2f; }
+
+/* Центрирование кнопки оформления заказа */
+.btn-orange {
+  display: block;
+  margin: 1rem auto;
+  width: fit-content;
+  padding: 0.8rem 1.5rem;
+  border-radius: 6px;
 }
 
-.btn:hover {
-  background: #556b2f;
-}
-
-/* Блок преимуществ */
+/* Блоки преимуществ */
 .highlights {
   display: flex;
   flex-wrap: wrap;
@@ -290,7 +239,6 @@ body {
   margin: 1.5rem 0;
   text-align: center;
 }
-
 .highlight-item {
   background: white;
   padding: 0.8rem 1rem;
@@ -301,18 +249,11 @@ body {
   color: var(--brown);
   transition: transform 0.2s;
 }
+.highlight-item:hover { transform: translateY(-2px); }
 
-.highlight-item:hover {
-  transform: translateY(-2px);
-}
+.cta { text-align: center; margin: 2rem 0; }
 
-/* Призыв к действию */
-.cta {
-  text-align: center;
-  margin: 2rem 0;
-}
-
-/* Корзина — ссылка в меню */
+/* Корзина — иконка в меню */
 .cart-link {
   display: flex;
   align-items: center;
@@ -325,11 +266,7 @@ body {
   transition: background 0.2s;
   min-height: 44px;
 }
-
-.cart-link:hover {
-  background: #e9ecef;
-}
-
+.cart-link:hover { background: #e9ecef; }
 #cart-count {
   background: var(--orange);
   color: white;
@@ -344,12 +281,6 @@ body {
   margin: 2rem auto;
   padding: 0 1rem;
 }
-
-.cart-container .section-title {
-  text-align: center;
-  margin-bottom: 1.5rem;
-}
-
 .cart-total {
   text-align: right;
   font-size: 1.3rem;
@@ -357,61 +288,23 @@ body {
   font-weight: bold;
   display: none;
 }
-
-.cart-cta {
-  text-align: center;
-  margin-top: 2rem;
-}
-
-.btn-orange {
-  background: var(--orange);
-  color: white;
-  padding: 0.8rem 1.5rem;
-  border-radius: 6px;
-  display: inline-block;
-  text-decoration: none;
-  min-height: 44px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.btn-orange:hover {
-  background: #d35400;
-}
-
+.cart-cta { text-align: center; margin-top: 2rem; }
 .cart-hint {
   margin-top: 1rem;
   font-size: 0.95rem;
   color: #555;
 }
-
 .cart-empty {
   text-align: center;
   font-size: 1.2rem;
   color: #666;
 }
-
 .cart-empty-link {
   color: var(--orange);
   text-decoration: underline;
 }
 
-/* Футер */
-footer {
-  text-align: center;
-  padding: 2rem 1rem;
-  background: white;
-  margin-top: 3rem;
-  border-top: 1px solid #eee;
-  color: #777;
-  font-size: 0.9rem;
-}
-
-/* =============================
-   Стили для корзины — ЕДИНЫЙ БЛОК (десктоп + мобильный)
-   ============================= */
-
+/* Элемент корзины */
 .cart-item {
   display: flex;
   align-items: center;
@@ -421,7 +314,6 @@ footer {
   border-bottom: 1px solid #eee;
   width: 100%;
 }
-
 .cart-item-img {
   width: 70px;
   height: 70px;
@@ -430,7 +322,6 @@ footer {
   flex-shrink: 0;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 }
-
 .cart-item-info {
   flex: 1;
   display: flex;
@@ -438,7 +329,6 @@ footer {
   gap: 0.8rem;
   flex-wrap: wrap;
 }
-
 .cart-item-info h3 {
   margin: 0;
   font-size: 1.1rem;
@@ -449,13 +339,11 @@ footer {
   text-overflow: ellipsis;
   max-width: 180px;
 }
-
 .cart-item-info p {
   margin: 0;
   color: #555;
   font-size: 0.95rem;
 }
-
 .cart-item-total {
   color: var(--olive);
   font-weight: bold;
@@ -463,14 +351,12 @@ footer {
   min-width: 80px;
   text-align: right;
 }
-
 .cart-item-controls {
   display: flex;
   align-items: center;
   gap: 0.5rem;
   flex-shrink: 0;
 }
-
 .quantity-btn {
   width: 36px;
   height: 36px;
@@ -487,70 +373,29 @@ footer {
   font-size: 1.1rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
-
 .quantity-btn:hover {
   background: var(--pink);
   border-color: var(--olive);
   color: var(--olive);
   transform: scale(1.05);
 }
+.quantity-btn:active { transform: scale(0.98); }
 
-.quantity-btn:active {
-  transform: scale(0.98);
-}
-
-/* Адаптивность — мобильные устройства */
-@media (max-width: 768px) {
-  .cart-item {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0.8rem;
-  }
-
-  .cart-item-info {
-    justify-content: space-between;
-    width: 100%;
-  }
-
-  .cart-item-total {
-    min-width: auto;
-    text-align: left;
-  }
-
-  .cart-item-controls {
-    justify-content: center;
-    width: 100%;
-    gap: 0.5rem;
-  }
-
-  .quantity-btn {
-    width: 32px;
-    height: 32px;
-    font-size: 1rem;
-  }
-}
-
-/* =============================
-   Форма заказа в корзине (уже есть в твоём коде — оставляем)
-   ============================= */
-
+/* Форма заказа */
 .cart-cta h3 {
   font-size: 1.3rem;
   color: var(--brown);
   margin-bottom: 1rem;
 }
-
 .form-group {
   margin-bottom: 1.2rem;
 }
-
 .form-group label {
   display: block;
   margin-bottom: 0.4rem;
   font-weight: 600;
   color: var(--brown);
 }
-
 .form-group input {
   width: 100%;
   padding: 0.65rem;
@@ -559,13 +404,11 @@ footer {
   font-size: 1rem;
   font-family: 'Lora', serif;
 }
-
 .form-group input:focus {
   outline: none;
   border-color: var(--olive);
   box-shadow: 0 0 0 2px rgba(107, 142, 35, 0.2);
 }
-
 .error {
   color: #e74c3c;
   font-size: 0.85rem;
@@ -573,27 +416,48 @@ footer {
   min-height: 1.2rem;
 }
 
-/* Адаптивность — остальное (оставляем как есть) */
+/* Футер */
+footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  background: white;
+  margin-top: 3rem;
+  border-top: 1px solid #eee;
+  color: #777;
+  font-size: 0.9rem;
+}
+
+/* Адаптивность — один объединённый блок */
 @media (max-width: 768px) {
-  .branding h1 {
-    font-size: 1.3rem;
-  }
+  .branding h1 { font-size: 1.3rem; }
+  .section-title, .category h2 { font-size: 1.5rem; }
+  .product img { height: 180px; }
+  .featured-products .product img { height: 200px; }
+  .products { gap: 1.2rem; }
 
-  .section-title,
-  .category h2 {
-    font-size: 1.5rem;
+  /* Корзина */
+  .cart-item {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.8rem;
   }
-
-  .product img {
-    height: 180px;
+  .cart-item-info {
+    justify-content: space-between;
+    width: 100%;
   }
-
-  .featured-products .product img {
-    height: 200px;
+  .cart-item-total {
+    min-width: auto;
+    text-align: left;
   }
-
-  .products {
-    gap: 1.2rem;
+  .cart-item-controls {
+    justify-content: center;
+    width: 100%;
+    gap: 0.5rem;
+  }
+  .quantity-btn {
+    width: 32px;
+    height: 32px;
+    font-size: 1rem;
   }
 }
 
@@ -603,49 +467,22 @@ footer {
     gap: 0.5rem;
     text-align: center;
   }
-
-  .logo {
-    width: 60px;
-  }
-
-  .branding h1 {
-    font-size: 1.2rem;
-  }
-
-  .branding .subtitle {
-    font-size: 0.85rem;
-  }
-
+  .logo { width: 60px; }
+  .branding h1 { font-size: 1.2rem; }
+  .branding .subtitle { font-size: 0.85rem; }
   .main-nav {
     flex-direction: column;
     align-items: center;
   }
-
   .main-nav a {
     width: 100%;
     max-width: 200px;
   }
-
-  body {
-    font-size: 16px;
-  }
-
-  .desc {
-    font-size: 1rem;
-  }
-
-  .price {
-    font-size: 1.3rem;
-  }
-
-  .product img {
-    height: 160px;
-  }
-
-  .featured-products .product img {
-    height: 180px;
-  }
-
+  body { font-size: 16px; }
+  .desc { font-size: 1rem; }
+  .price { font-size: 1.3rem; }
+  .product img { height: 160px; }
+  .featured-products .product img { height: 180px; }
   .highlight-item {
     min-width: 160px;
     padding: 0.7rem 0.9rem;
