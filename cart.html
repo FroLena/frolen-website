@@ -94,7 +94,7 @@
 
 <!-- Скрипт отображения корзины и отправки заказа -->
 <script>
-  // Отображение корзины
+  // Отображение корзины и управление количеством
   document.addEventListener('DOMContentLoaded', () => {
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
     const cartContent = document.getElementById('cart-content');
@@ -102,107 +102,142 @@
     const cartTotalEl = document.getElementById('cart-total');
     const cartCountEl = document.getElementById('cart-count');
 
-    const totalCount = cart.reduce((sum, item) => sum + item.quantity, 0);
-    if (cartCountEl) cartCountEl.textContent = totalCount;
+    function updateCartDisplay() {
+      const totalCount = cart.reduce((sum, item) => sum + item.quantity, 0);
+      if (cartCountEl) cartCountEl.textContent = totalCount;
 
-    if (cart.length === 0) {
-      cartContent.innerHTML = `
-        <p class="cart-empty">
-          Ваша корзина пуста 😢<br>
-          <a href="index.html" class="cart-empty-link">Вернуться в каталог</a>
-        </p>
-      `;
-      cartTotalEl.style.display = 'none';
-    } else {
-      let html = '';
+      if (cart.length === 0) {
+        cartContent.innerHTML = `
+          <p class="cart-empty">
+            Ваша корзина пуста 😢<br>
+            <a href="index.html" class="cart-empty-link">Вернуться в каталог</a>
+          </p>
+        `;
+        cartTotalEl.style.display = 'none';
+      } else {
+        let html = '';
+        let total = 0;
+
+        cart.forEach((item, index) => {
+          const itemTotal = item.price * item.quantity;
+          total += itemTotal;
+          html += `
+            <div class="cart-item">
+              <img src="${item.image}" alt="${item.name}" class="cart-item-img">
+              <div class="cart-item-info">
+                <h3>${item.name}</h3>
+                <p>${item.price} ₽ × ${item.quantity}</p>
+                <p class="cart-item-total">${itemTotal} ₽</p>
+              </div>
+              <div class="cart-item-controls">
+                <button class="quantity-btn minus" data-index="${index}">–</button>
+                <button class="quantity-btn plus" data-index="${index}">+</button>
+              </div>
+            </div>
+          `;
+        });
+
+        cartContent.innerHTML = html;
+        totalAmountEl.textContent = total;
+        cartTotalEl.style.display = 'block';
+
+        // Добавляем обработчики для кнопок +/- после рендера
+        addQuantityEventListeners();
+      }
+    }
+
+    function addQuantityEventListeners() {
+      document.querySelectorAll('.quantity-btn.minus').forEach(btn => {
+        btn.addEventListener('click', function() {
+          const index = parseInt(this.dataset.index);
+          if (cart[index].quantity > 1) {
+            cart[index].quantity -= 1;
+          } else {
+            cart.splice(index, 1); // Удаляем товар, если количество = 1
+          }
+          localStorage.setItem('cart', JSON.stringify(cart));
+          updateCartDisplay();
+        });
+      });
+
+      document.querySelectorAll('.quantity-btn.plus').forEach(btn => {
+        btn.addEventListener('click', function() {
+          const index = parseInt(this.dataset.index);
+          cart[index].quantity += 1;
+          localStorage.setItem('cart', JSON.stringify(cart));
+          updateCartDisplay();
+        });
+      });
+    }
+
+    updateCartDisplay();
+
+    // Валидация и отправка заказа
+    document.getElementById('order-form')?.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      document.querySelectorAll('.error').forEach(el => el.textContent = '');
+      
+      const name = document.getElementById('customer-name').value.trim();
+      const phone = document.getElementById('customer-phone').value.trim();
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+      let hasError = false;
+
+      if (!name) {
+        document.getElementById('name-error').textContent = 'Пожалуйста, укажите имя.';
+        hasError = true;
+      }
+
+      const phoneRegex = /^(\+?7|8)?[\s\-]?\(?[489]\d{2}\)?[\s\-]?\d{3}[\s\-]?\d{2}[\s\-]?\d{2}$/;
+      if (!phone) {
+        document.getElementById('phone-error').textContent = 'Пожалуйста, укажите телефон.';
+        hasError = true;
+      } else if (!phoneRegex.test(phone.replace(/\s+/g, ' '))) {
+        document.getElementById('phone-error').textContent = 'Введите корректный номер (например, +7 912 345-67-89).';
+        hasError = true;
+      }
+
+      if (cart.length === 0) {
+        alert('Корзина пуста!');
+        return;
+      }
+
+      if (hasError) return;
+
+      let itemsText = '';
       let total = 0;
-
       cart.forEach(item => {
         const itemTotal = item.price * item.quantity;
         total += itemTotal;
-        html += `
-          <div class="cart-item">
-            <img src="${item.image}" alt="${item.name}" class="cart-item-img">
-            <div class="cart-item-info">
-              <h3>${item.name}</h3>
-              <p>${item.price} ₽ × ${item.quantity}</p>
-              <p class="cart-item-total">${itemTotal} ₽</p>
-            </div>
-          </div>
-        `;
+        itemsText += `• ${item.name} — ${item.price} ₽ × ${item.quantity}\n`;
       });
 
-      cartContent.innerHTML = html;
-      totalAmountEl.textContent = total;
-      cartTotalEl.style.display = 'block';
-    }
+      const message = `🛒 Новый заказ!\n\nИмя: ${name}\nТелефон: ${phone}\n\nТовары:\n${itemsText}Итого: ${total} ₽`;
+      const encodedMessage = encodeURIComponent(message);
+      const telegramUrl = `https://t.me/parentvoeimamy?text=${encodedMessage}`;
+
+      // 🔥 Гарантированная работа на мобильных
+      window.location.href = telegramUrl;
+
+      // Очистка корзины
+      localStorage.removeItem('cart');
+      if (document.getElementById('cart-count')) {
+        document.getElementById('cart-count').textContent = '0';
+      }
+      if (document.getElementById('cart-content')) {
+        document.getElementById('cart-content').innerHTML = `
+          <p class="cart-empty">
+            Ваш заказ отправлен! Спасибо 🌿<br>
+            <a href="index.html" class="cart-empty-link">Продолжить покупки</a>
+          </p>
+        `;
+      }
+      if (document.getElementById('cart-total')) {
+        document.getElementById('cart-total').style.display = 'none';
+      }
+    });
   });
-
-  // Валидация и отправка заказа
-  document.getElementById('order-form')?.addEventListener('submit', function(e) {
-  e.preventDefault();
-
-  document.querySelectorAll('.error').forEach(el => el.textContent = '');
-  
-  const name = document.getElementById('customer-name').value.trim();
-  const phone = document.getElementById('customer-phone').value.trim();
-  const cart = JSON.parse(localStorage.getItem('cart')) || [];
-
-  let hasError = false;
-
-  if (!name) {
-    document.getElementById('name-error').textContent = 'Пожалуйста, укажите имя.';
-    hasError = true;
-  }
-
-  const phoneRegex = /^(\+?7|8)?[\s\-]?\(?[489]\d{2}\)?[\s\-]?\d{3}[\s\-]?\d{2}[\s\-]?\d{2}$/;
-  if (!phone) {
-    document.getElementById('phone-error').textContent = 'Пожалуйста, укажите телефон.';
-    hasError = true;
-  } else if (!phoneRegex.test(phone.replace(/\s+/g, ' '))) {
-    document.getElementById('phone-error').textContent = 'Введите корректный номер (например, +7 912 345-67-89).';
-    hasError = true;
-  }
-
-  if (cart.length === 0) {
-    alert('Корзина пуста!');
-    return;
-  }
-
-  if (hasError) return;
-
-  let itemsText = '';
-  let total = 0;
-  cart.forEach(item => {
-    const itemTotal = item.price * item.quantity;
-    total += itemTotal;
-    itemsText += `• ${item.name} — ${item.price} ₽ × ${item.quantity}\n`;
-  });
-
-  const message = `🛒 Новый заказ!\n\nИмя: ${name}\nТелефон: ${phone}\n\nТовары:\n${itemsText}Итого: ${total} ₽`;
-  const encodedMessage = encodeURIComponent(message);
-  const telegramUrl = `https://t.me/parentvoeimamy?text=${encodedMessage}`;
-
-  // 🔥 Гарантированная работа на мобильных
-  window.location.href = telegramUrl;
-
-  // Очистка корзины
-  localStorage.removeItem('cart');
-  if (document.getElementById('cart-count')) {
-    document.getElementById('cart-count').textContent = '0';
-  }
-  if (document.getElementById('cart-content')) {
-    document.getElementById('cart-content').innerHTML = `
-      <p class="cart-empty">
-        Ваш заказ отправлен! Спасибо 🌿<br>
-        <a href="index.html" class="cart-empty-link">Продолжить покупки</a>
-      </p>
-    `;
-  }
-  if (document.getElementById('cart-total')) {
-    document.getElementById('cart-total').style.display = 'none';
-  }
-});
 </script>
 
 <script src="cart.js"></script>
