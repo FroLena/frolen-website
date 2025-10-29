@@ -3,13 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Алоэ — ФроЛен ЕКБ</title>
-  <meta name="description" content="Натуральное мыло с алоэ ручной работы. Увлажняет и успокаивает кожу.">
+  <title>Бельди винное — ФроЛен ЕКБ</title>
+  <meta name="description" content="Винное бельди — уникальная разновидность традиционного марокканского мыла. Обогащено антиоксидантами, содержащимися в вине.">
   <link rel="stylesheet" href="../style.css">
 </head>
 <body>
 
-<!-- ЕДИНЫЙ HEADER -->
 <header>
   <div class="header-top">
     <img src="../logo.webp" alt="ФроЛен ЕКБ" class="logo">
@@ -30,48 +29,24 @@
   </nav>
 </header>
 
-<!-- Основной контент -->
 <div class="container">
-  <div class="product-detail">
-    <!-- твой контент -->
-  </div>
-</div>
-
-<footer>...</footer>
-
-<!-- Скрипт для корзины -->
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const count = JSON.parse(localStorage.getItem('cart'))?.reduce((sum, item) => sum + item.quantity, 0) || 0;
-    if (document.getElementById('cart-count')) {
-      document.getElementById('cart-count').textContent = count;
-    }
-  });
-</script>
-
-</body>
-</html>
-
-<div class="container">
-
   <div class="product-detail">
     <img src="../photos/probniki/beldi_vinnoe.webp" alt="Бельди винное" style="width:100%; max-width:500px; border-radius:16px; margin-bottom:1.5rem; height: auto;">
-    
+
     <h2>Бельди винное</h2>
     <div class="price">540 ₽</div>
-    
+
     <h3>Описание</h3>
     <p>Винное бельди — это уникальная разновидность традиционного марокканского мыла. Это мыло сочетает в себе все полезные свойства классического бельди, но дополнительно обогащено антиоксидантами, содержащимися в вине.</p>
-    
+
     <h3>Состав</h3>
     <p>Омыленные масла (кокосовое, пальмовое, высокоолеиновое подсолнечное, касторовое), неомыляемые масла — виноградной косточки, выпаренное красное сухое вино, лактат натрия, цитрат натрия, отдушка Гранатовый сидр.</p>
-    
+
     <h3>Рекомендации</h3>
     <p>Рекомендуется для зрелой и уставшей кожи. Используйте 1 раз в неделю для роскошного спа-ритуала дома.</p>
-    
+
     <a href="https://t.me/parentvoeimamy?text=Хочу%20заказать%20Бельди%20винное" class="btn" style="margin-top:1.5rem; display: inline-block;">Заказать</a>
   </div>
-
 </div>
 
 <footer>
@@ -81,6 +56,15 @@
     Доставка по Екатеринбургу • Натуральный состав • Ручная работа
   </p>
 </footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const count = JSON.parse(localStorage.getItem('cart'))?.reduce((sum, item) => sum + item.quantity, 0) || 0;
+    if (document.getElementById('cart-count')) {
+      document.getElementById('cart-count').textContent = count;
+    }
+  });
+</script>
 
 </body>
 </html>
