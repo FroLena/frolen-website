@@ -154,14 +154,14 @@ body {
 }
 .product img {
   width: 100%;
-  max-width: 100%;
-  height: auto; /* 👈 Убираем фиксированную высоту */
-  object-fit: contain; /* 👈 Используем contain вместо cover */
+  height: 0;
+  padding-top: 75%; /* 👈 Это создаст соотношение 4:3 (3/4 = 0.75) */
+  object-fit: cover;
   object-position: center;
   background: #f5f0e6;
   border-radius: 16px;
   margin-bottom: 1rem;
-}
+  display: block;
 }
 .featured-products .product img { height: 220px; }
 .product-info { padding: 1.2rem; }
@@ -437,6 +437,7 @@ footer {
   .branding h1 { font-size: 1.3rem; }
   .section-title, .category h2 { font-size: 1.5rem; }
   .product img { 
+    padding-top: 66.67%; /* 👈 Это создаст соотношение 3:2 (2/3 = 0.6667) */
     height: 150px; /* 👈 Уменьши высоту для лучшего отображения */
     object-fit: cover;
     object-position: center;
