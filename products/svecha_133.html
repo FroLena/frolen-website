@@ -10,36 +10,40 @@
 <body>
 
 <header>
-  <img src="../logo.webp" alt="ФроЛен ЕКБ" class="logo">
-  <h1>🌿🧼 ФроЛен ЕКБ</h1>
-  <p class="subtitle">Натуральное мыло и свечи ручной работы</p>
-</header>
-
-<nav class="main-nav">
-  <a href="../index.html">Главная</a>
-  <a href="../mylo.html">Мыло</a>
-  <a href="../probniki.html">Пробники</a>
-  <a href="../svechi.html">Свечи</a>
-  <a href="../dostavka.html">Доставка</a>
-</nav>
-
-<div class="container">
-
-  <div class="product-detail">
-    <img src="../photos/svechi/svecha_133.webp" alt="Свеча 133" style="width:100%; max-width:500px; border-radius:16px; margin-bottom:1.5rem; height: auto;">
-    
-    <h2>Свеча 133</h2>
-    <div class="price">200 ₽</div>
-    
-    <h3>Характеристики</h3>
-    <p>Высота: 13 см<br>Диаметр: 3 см</p>
-    
-    <h3>Описание</h3>
-    <p>Более высокая свеча для длительного горения. Идеальна для создания атмосферы уюта в гостиной или спальне. Изготовлена вручную с любовью.</p>
-    
-    <a href="https://t.me/parentvoeimamy?text=Хочу%20заказать%20Свечу%20133" class="btn" style="margin-top:1.5rem; display: inline-block;">Заказать</a>
+  <div class="header-top">
+    <img src="../logo.webp" alt="ФроЛен ЕКБ" class="logo">
+    <div class="branding">
+      <h1>🌿🧼 ФроЛен ЕКБ</h1>
+      <p class="subtitle">Натуральное мыло и свечи ручной работы</p>
+    </div>
   </div>
 
+  <nav class="main-nav">
+    <a href="../index.html">Главная</a>
+    <a href="../mylo.html">Мыло</a>
+    <a href="../probniki.html">Пробники</a>
+    <a href="../svechi.html">Свечи</a>
+    <a href="../dostavka.html">Доставка</a>
+    <a href="../faq.html">Вопросы</a>
+    <a href="../cart.html" class="cart-link">🛒 <span id="cart-count">0</span></a>
+  </nav>
+</header>
+
+<div class="container">
+  <div class="product-detail">
+    <img src="../photos/svechi/svecha_133.webp" alt="Свеча 133" style="width:100%; max-width:500px; border-radius:16px; margin-bottom:1.5rem; height: auto;">
+
+    <h2>Свеча 133</h2>
+    <div class="price">200 ₽</div>
+
+    <h3>Характеристики</h3>
+    <p>Высота: 13 см<br>Диаметр: 3 см</p>
+
+    <h3>Описание</h3>
+    <p>Более высокая свеча для длительного горения. Идеальна для создания атмосферы уюта в гостиной или спальне. Изготовлена вручную с любовью.</p>
+
+    <a href="https://t.me/parentvoeimamy?text=Хочу%20заказать%20Свечу%20133" class="btn" style="margin-top:1.5rem; display: inline-block;">Заказать</a>
+  </div>
 </div>
 
 <footer>
@@ -49,6 +53,15 @@
     Доставка по Екатеринбургу • Натуральный состав • Ручная работа
   </p>
 </footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const count = JSON.parse(localStorage.getItem('cart'))?.reduce((sum, item) => sum + item.quantity, 0) || 0;
+    if (document.getElementById('cart-count')) {
+      document.getElementById('cart-count').textContent = count;
+    }
+  });
+</script>
 
 </body>
 </html>
