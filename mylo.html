@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>ФроЛен ЕКБ — Мыло ручной работы</title>
+  <title>ФроЛен ЕКБ — Мыло</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -32,15 +32,73 @@
 <div class="container">
 
   <section class="category">
-    <h2 class="section-title">🌸 Мыло</h2>
-    <div class="products">
+    <h2>🌿 Мыло</h2>
+    <p>Выберите мыло по своим предпочтениям.</p>
 
-      <div class="product">
-        <img src="photos/mylo/kalendula.webp" alt="Календула">
+    <!-- Блок фильтров и сортировки -->
+    <div class="filters-sorting">
+      <div class="filter-group">
+        <h3>Фильтры</h3>
+        <div class="filter-item">
+          <label>
+            <input type="checkbox" name="price" value="under200"> До 200 ₽
+          </label>
+        </div>
+        <div class="filter-item">
+          <label>
+            <input type="checkbox" name="price" value="200to300"> 200 - 300 ₽
+          </label>
+        </div>
+        <div class="filter-item">
+          <label>
+            <input type="checkbox" name="price" value="over300"> От 300 ₽
+          </label>
+        </div>
+        <div class="filter-item">
+          <label>
+            <input type="checkbox" name="type" value="for_face"> Для лица
+          </label>
+        </div>
+        <div class="filter-item">
+          <label>
+            <input type="checkbox" name="type" value="for_body"> Для тела
+          </label>
+        </div>
+        <div class="filter-item">
+          <label>
+            <input type="checkbox" name="type" value="soothing"> Успокаивающие
+          </label>
+        </div>
+        <div class="filter-item">
+          <label>
+            <input type="checkbox" name="type" value="nourishing"> Питательные
+          </label>
+        </div>
+      </div>
+
+      <div class="sort-group">
+        <h3>Сортировка</h3>
+        <select id="sort-select">
+          <option value="default">По умолчанию</option>
+          <option value="price-asc">Цена (по возрастанию)</option>
+          <option value="price-desc">Цена (по убыванию)</option>
+          <option value="name-asc">Название (А-Я)</option>
+          <option value="name-desc">Название (Я-А)</option>
+        </select>
+      </div>
+    </div>
+    <!-- Конец блока фильтров и сортировки -->
+
+    <!-- Контейнер для товаров -->
+    <div class="products" id="products-container">
+      <!-- Карточки товаров -->
+      <!-- ВАЖНО: Добавим data-атрибуты для фильтрации -->
+      <article class="product" data-price="270" data-type="for_face soothing">
+        <img src="photos/mylo/kalendula.webp" alt="Мыло ручной работы 'Календула'">
         <div class="product-info">
           <h3>Календула</h3>
           <div class="price">270 ₽</div>
-          <p class="desc">Состав: омыленные масла(инфуз календулы на хлопковом масле), вода, порошок календулы, лактат натрия, цитрат натрия, хлорид натрия.</p>
+          <p class="desc">Омыленные масла (инфуз календулы на хлопковом масле), вода, порошок календулы.</p>
           <div class="product-actions">
             <a href="products/kalendula.html" class="btn-secondary">Подробнее</a>
             <button class="btn-primary add-to-cart"
@@ -50,82 +108,14 @@
                     data-image="photos/mylo/kalendula.webp">В корзину</button>
           </div>
         </div>
-      </div>
+      </article>
 
-      <div class="product">
-        <img src="photos/mylo/aloe.webp" alt="Алоэ">
-        <div class="product-info">
-          <h3>Алоэ</h3>
-          <div class="price">280 ₽</div>
-          <p class="desc">Состав: омыленные масла(хлопковое), жмых алоэ, сок алоэ, лактат натрия, цитрат натрия, хлорид натрия.</p>
-          <div class="product-actions">
-            <a href="products/aloe.html" class="btn-secondary">Подробнее</a>
-            <button class="btn-primary add-to-cart"
-                    data-id="aloe"
-                    data-name="Алоэ"
-                    data-price="280"
-                    data-image="photos/mylo/aloe.webp">В корзину</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="product">
-        <img src="photos/mylo/morkovnoe.webp" alt="Морковное">
-        <div class="product-info">
-          <h3>Морковное</h3>
-          <div class="price">250 ₽</div>
-          <p class="desc">Состав: омыленные масла (хлопковое), вода, пюре моркови, лактат натрия, цитрат натрия.</p>
-          <div class="product-actions">
-            <a href="products/morkovnoe.html" class="btn-secondary">Подробнее</a>
-            <button class="btn-primary add-to-cart"
-                    data-id="morkovnoe"
-                    data-name="Морковное"
-                    data-price="250"
-                    data-image="photos/mylo/morkovnoe.webp">В корзину</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="product">
-        <img src="photos/mylo/ogurechnoe.webp" alt="Огуречное">
-        <div class="product-info">
-          <h3>Огуречное</h3>
-          <div class="price">200 ₽</div>
-          <p class="desc">Состав: омыленные масла(хлопковое), сок огурца, лактат натрия, цитрат натрия, жмых огурца.</p>
-          <div class="product-actions">
-            <a href="products/ogurechnoe.html" class="btn-secondary">Подробнее</a>
-            <button class="btn-primary add-to-cart"
-                    data-id="ogurechnoe"
-                    data-name="Огуречное"
-                    data-price="200"
-                    data-image="photos/mylo/ogurechnoe.webp">В корзину</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="product">
-        <img src="photos/mylo/letnee_lukoshko.webp" alt="Летнее Лукошко">
-        <div class="product-info">
-          <h3>Летнее Лукошко</h3>
-          <div class="price">250 ₽</div>
-          <p class="desc">Состав: омыленные масла (кокосовое, пальмовое, инфуз розы на высокоолеиновом масле, касторовое, зародышей пшеницы) вода, лактат натрия, цитрат натрия, косметическая отдушка.</p>
-          <div class="product-actions">
-            <a href="products/letnee_lukoshko.html" class="btn-secondary">Подробнее</a>
-            <button class="btn-primary add-to-cart"
-                    data-id="letnee_lukoshko"
-                    data-name="Летнее Лукошко"
-                    data-price="250"
-                    data-image="photos/mylo/letnee_lukoshko.webp">В корзину</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="product">
-        <img src="photos/mylo/medovoe.webp" alt="Медовое">
+      <article class="product" data-price="350" data-type="for_body nourishing">
+        <img src="photos/mylo/medovoe.webp" alt="Мыло ручной работы 'Медовое'">
         <div class="product-info">
           <h3>Медовое</h3>
           <div class="price">350 ₽</div>
-          <p class="desc">Состав: омыленные масла(пальмовое, кокосовое, миндальное, облепиховое, касторовое, высокоолеиновое) вода, мёд, лактат натрия, цитрат натрия, отдушка косметическая.</p>
+          <p class="desc">Омыленные масла (пальмовое, кокосовое, миндальное, облепиховое), мёд, отдушка.</p>
           <div class="product-actions">
             <a href="products/medovoe.html" class="btn-secondary">Подробнее</a>
             <button class="btn-primary add-to-cart"
@@ -135,14 +125,14 @@
                     data-image="photos/mylo/medovoe.webp">В корзину</button>
           </div>
         </div>
-      </div>
+      </article>
 
-      <div class="product">
-        <img src="photos/mylo/shungit.webp" alt="Шунгит">
+      <article class="product" data-price="350" data-type="for_body">
+        <img src="photos/mylo/shungit.webp" alt="Мыло ручной работы 'Шунгит'">
         <div class="product-info">
           <h3>Шунгит</h3>
           <div class="price">350 ₽</div>
-          <p class="desc">Состав: омыленные масла(пальмоядровое, пальмовое, кокосовое, высокоолеиновое подсолнечное, касторовое), отвар эвкалипта, лактат натрия, цитрат натрия, отдушка косметическая, шунгит.</p>
+          <p class="desc">Омыленные масла, отвар эвкалипта, шунгит, отдушка косметическая.</p>
           <div class="product-actions">
             <a href="products/shungit.html" class="btn-secondary">Подробнее</a>
             <button class="btn-primary add-to-cart"
@@ -152,9 +142,78 @@
                     data-image="photos/mylo/shungit.webp">В корзину</button>
           </div>
         </div>
-      </div>
+      </article>
 
-    </div>
+      <article class="product" data-price="280" data-type="for_face soothing">
+        <img src="photos/mylo/aloe.webp" alt="Мыло ручной работы 'Алоэ'">
+        <div class="product-info">
+          <h3>Алоэ</h3>
+          <div class="price">280 ₽</div>
+          <p class="desc">Омыленные масла (хлопковое), жмых алоэ, сок алоэ, лактат натрия.</p>
+          <div class="product-actions">
+            <a href="products/aloe.html" class="btn-secondary">Подробнее</a>
+            <button class="btn-primary add-to-cart"
+                    data-id="aloe"
+                    data-name="Алоэ"
+                    data-price="280"
+                    data-image="photos/mylo/aloe.webp">В корзину</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product" data-price="200" data-type="for_face for_body">
+        <img src="photos/mylo/ogurechnoe.webp" alt="Мыло ручной работы 'Огуречное'">
+        <div class="product-info">
+          <h3>Огуречное</h3>
+          <div class="price">200 ₽</div>
+          <p class="desc">Омыленные масла (хлопковое), сок огурца, лактат натрия, жмых огурца.</p>
+          <div class="product-actions">
+            <a href="products/ogurechnoe.html" class="btn-secondary">Подробнее</a>
+            <button class="btn-primary add-to-cart"
+                    data-id="ogurechnoe"
+                    data-name="Огуречное"
+                    data-price="200"
+                    data-image="photos/mylo/ogurechnoe.webp">В корзину</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product" data-price="250" data-type="for_body">
+        <img src="photos/mylo/letnee_lukoshko.webp" alt="Мыло ручной работы 'Летнее Лукошко'">
+        <div class="product-info">
+          <h3>Летнее Лукошко</h3>
+          <div class="price">250 ₽</div>
+          <p class="desc">Омыленные масла (кокосовое, пальмовое, инфуз розы на высокоолеиновом масле), вода.</p>
+          <div class="product-actions">
+            <a href="products/letnee_lukoshko.html" class="btn-secondary">Подробнее</a>
+            <button class="btn-primary add-to-cart"
+                    data-id="letnee_lukoshko"
+                    data-name="Летнее Лукошко"
+                    data-price="250"
+                    data-image="photos/mylo/letnee_lukoshko.webp">В корзину</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product" data-price="250" data-type="for_face soothing">
+        <img src="photos/mylo/morkovnoe.webp" alt="Мыло ручной работы 'Морковное'">
+        <div class="product-info">
+          <h3>Морковное</h3>
+          <div class="price">250 ₽</div>
+          <p class="desc">Омыленные масла (хлопковое), вода, пюре моркови, лактат натрия.</p>
+          <div class="product-actions">
+            <a href="products/morkovnoe.html" class="btn-secondary">Подробнее</a>
+            <button class="btn-primary add-to-cart"
+                    data-id="morkovnoe"
+                    data-name="Морковное"
+                    data-price="250"
+                    data-image="photos/mylo/morkovnoe.webp">В корзину</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Добавь сюда больше карточек, не забывая про data-price и data-type -->
+    </div> <!-- Закрывающий тег для #products-container -->
   </section>
 
 </div>
@@ -169,9 +228,7 @@
 
 <!-- Yandex.Metrika counter -->
 <script type="text/javascript">
-  (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-  m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-  (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+  (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
 
   ym(104870619, "init", {
     clickmap: true,
@@ -189,5 +246,7 @@
 <!-- /Yandex.Metrika counter -->
 
 <script src="cart.js"></script>
+<!-- Подключаем скрипт фильтрации и сортировки -->
+<script src="filter-sort.js"></script>
 </body>
 </html>
