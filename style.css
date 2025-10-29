@@ -155,7 +155,8 @@ body {
 .product img {
   width: 100%;
   height: 200px;
-  object-fit: cover;
+  object-fit: cover; /* 👈 ВНЕСЕНО ИЗМЕНЕНИЕ */
+  object-position: center; /* 👈 ВНЕСЕНО ИЗМЕНЕНИЕ */
   background: #f5f0e6;
 }
 .featured-products .product img { height: 220px; }
