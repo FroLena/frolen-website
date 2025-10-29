@@ -147,7 +147,7 @@ body {
   overflow: hidden;
   box-shadow: 0 4px 12px var(--shadow);
   transition: transform 0.2s ease;
-  position: relative; /* 👈 Добавь эту строку! */
+  position: relative; /* Для работы padding-top */
 }
 .product:hover {
   transform: translateY(-4px);
@@ -156,18 +156,21 @@ body {
 .product img {
   width: 100%;
   height: 0;
-  padding-top: 75%; /* Это создаст соотношение 4:3 (3/4 = 0.75) */
+  padding-top: 75%; /* Соотношение 4:3 */
   object-fit: cover;
   object-position: center;
   background: #f5f0e6;
   border-radius: 16px;
   margin-bottom: 1rem;
   display: block;
-  position: absolute; /* 👈 Эта строка добавлена */
+  position: absolute;
   top: 0;
   left: 0;
 }
-.featured-products .product img { height: 220px; }
+.featured-products .product img {
+  padding-top: 75%; /* Соотношение 4:3 */
+  height: auto; /* Убираем фиксированную высоту */
+}
 .product-info { padding: 1.2rem; }
 .product h3 {
   font-size: 1.3rem;
@@ -443,20 +446,19 @@ footer {
 
   .product img {
     padding-top: 66.67%; /* Соотношение 3:2 */
-    /* height: 150px; 👈 УБЕРИ ЭТУ СТРОКУ! */
+    height: auto; /* Убираем фиксированную высоту */
     object-fit: cover;
     object-position: center;
   }
 
   .featured-products .product img {
     padding-top: 66.67%; /* Соотношение 3:2 */
-    /* height: 180px; 👈 УБЕРИ ЭТУ СТРОКУ! */
+    height: auto; /* Убираем фиксированную высоту */
     object-fit: cover;
     object-position: center;
   }
 
   .products { gap: 1.2rem; }
-}
 
   /* Корзина */
   .cart-item {
@@ -504,8 +506,14 @@ footer {
   body { font-size: 16px; }
   .desc { font-size: 1rem; }
   .price { font-size: 1.3rem; }
-  .product img { height: 160px; }
-  .featured-products .product img { height: 180px; }
+  .product img { 
+    padding-top: 66.67%; /* Соотношение 3:2 */
+    height: auto;
+  }
+  .featured-products .product img { 
+    padding-top: 66.67%; /* Соотношение 3:2 */
+    height: auto;
+  }
   .highlight-item {
     min-width: 160px;
     padding: 0.7rem 0.9rem;
