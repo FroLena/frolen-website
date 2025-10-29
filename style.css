@@ -127,17 +127,43 @@ body {
   border-bottom: 2px solid var(--pink);
 }
 
-/* Товары */
-.products {
+/* Стили для обычных сеток товаров (например, на главной странице, кроме карусели) */
+.products:not(.products-carousel) {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1.5rem;
   margin-bottom: 2rem;
 }
 @media (min-width: 769px) {
-  .products {
+  .products:not(.products-carousel) {
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 1.8rem;
+  }
+}
+
+/* Стили для карусели */
+.products-carousel {
+  display: flex; /* Для карусели используем flex */
+  transition: transform 0.5s ease-in-out; /* Плавное перемещение */
+  gap: 1.8rem; /* Отступы между карточками */
+  padding: 1rem; /* Небольшой отступ внутри */
+}
+
+/* Карточки внутри карусели */
+.products-carousel .product {
+  flex: 0 0 calc((100% - 2 * 1.8rem) / 3); /* Ширина одной карточки для 3 в ряд */
+  min-width: 0; /* Позволяет карточке уменьшаться */
+}
+
+/* Адаптивность для карусели */
+@media (max-width: 768px) {
+  .products-carousel .product {
+    flex: 0 0 calc((100% - 1 * 1.2rem) / 2); /* 2 карточки в ряд */
+  }
+}
+@media (max-width: 480px) {
+  .products-carousel .product {
+    flex: 0 0 100%; /* 1 карточка в ряд */
   }
 }
 
