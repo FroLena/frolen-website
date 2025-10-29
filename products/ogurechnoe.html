@@ -9,6 +9,7 @@
 </head>
 <body>
 
+<!-- ЕДИНЫЙ HEADER -->
 <header>
   <div class="header-top">
     <img src="../logo.webp" alt="ФроЛен ЕКБ" class="logo">
@@ -20,8 +21,9 @@
 
   <nav class="main-nav">
     <a href="../index.html">Главная</a>
-    <a href="../mylo.html">Мыло</a>
+    <a href="../mylo.html" class="active">Мыло</a>
     <a href="../probniki.html">Пробники</a>
+    <a href="../pod_zakaz.html">Под заказ</a>
     <a href="../svechi.html">Свечи</a>
     <a href="../dostavka.html">Доставка</a>
     <a href="../faq.html">Вопросы</a>
@@ -29,8 +31,9 @@
   </nav>
 </header>
 
+<!-- Основной контент -->
 <div class="container">
-  <div class="product-detail">
+  <div class="product-page">
     <img src="../photos/mylo/ogurechnoe.webp" alt="Огуречное мыло" style="width:100%; max-width:500px; border-radius:16px; margin-bottom:1.5rem; height: auto;">
 
     <h2>Огуречное</h2>
@@ -47,6 +50,72 @@
 
     <a href="https://t.me/parentvoeimamy?text=Хочу%20заказать%20Огуречное" class="btn" style="margin-top:1.5rem; display: inline-block;">Заказать</a>
   </div>
+
+  <!-- Блок "Похожие товары" -->
+  <div class="container">
+    <h2 class="section-title">Похожие товары</h2>
+    <div class="products">
+      <!-- Алоэ -->
+      <article class="product">
+        <a href="aloe.html">
+          <img src="../photos/mylo/aloe.webp" alt="Мыло Алоэ">
+        </a>
+        <div class="product-info">
+          <h3><a href="aloe.html" style="color: inherit; text-decoration: none;">Алоэ</a></h3>
+          <div class="price">280 ₽</div>
+          <p class="desc">Мыло с алоэ — идеальный уход для обезвоженной и раздражённой кожи.</p>
+          <div class="product-actions">
+            <a href="aloe.html" class="btn-secondary">Подробнее</a>
+            <button class="btn-primary add-to-cart"
+                    data-id="aloe"
+                    data-name="Алоэ"
+                    data-price="280"
+                    data-image="../photos/mylo/aloe.webp">В корзину</button>
+          </div>
+        </div>
+      </article>
+      <!-- Календула -->
+      <article class="product">
+        <a href="kalendula.html">
+          <img src="../photos/mylo/kalendula.webp" alt="Мыло Календула">
+        </a>
+        <div class="product-info">
+          <h3><a href="kalendula.html" style="color: inherit; text-decoration: none;">Календула</a></h3>
+          <div class="price">270 ₽</div>
+          <p class="desc">Мыло с календулой — идеальный выбор для чувствительной, склонной к раздражению кожи.</p>
+          <div class="product-actions">
+            <a href="kalendula.html" class="btn-secondary">Подробнее</a>
+            <button class="btn-primary add-to-cart"
+                    data-id="kalendula"
+                    data-name="Календула"
+                    data-price="270"
+                    data-image="../photos/mylo/kalendula.webp">В корзину</button>
+          </div>
+        </div>
+      </article>
+      <!-- Медовое -->
+      <article class="product">
+        <a href="medovoe.html">
+          <img src="../photos/mylo/medovoe.webp" alt="Мыло Медовое">
+        </a>
+        <div class="product-info">
+          <h3><a href="medovoe.html" style="color: inherit; text-decoration: none;">Медовое</a></h3>
+          <div class="price">350 ₽</div>
+          <p class="desc">Омыленные масла (пальмовое, кокосовое, миндальное, облепиховое), мёд, отдушка.</p>
+          <div class="product-actions">
+            <a href="medovoe.html" class="btn-secondary">Подробнее</a>
+            <button class="btn-primary add-to-cart"
+                    data-id="medovoe"
+                    data-name="Медовое"
+                    data-price="350"
+                    data-image="../photos/mylo/medovoe.webp">В корзину</button>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+  <!-- Конец блока "Похожие товары" -->
+
 </div>
 
 <footer>
@@ -57,6 +126,7 @@
   </p>
 </footer>
 
+<!-- Скрипт для корзины -->
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     const count = JSON.parse(localStorage.getItem('cart'))?.reduce((sum, item) => sum + item.quantity, 0) || 0;
