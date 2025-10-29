@@ -435,9 +435,18 @@ footer {
 @media (max-width: 768px) {
   .branding h1 { font-size: 1.3rem; }
   .section-title, .category h2 { font-size: 1.5rem; }
-  .product img { height: 180px; }
-  .featured-products .product img { height: 200px; }
+  .product img { 
+    height: 150px; /* 👈 Уменьши высоту для лучшего отображения */
+    object-fit: cover;
+    object-position: center;
+  }
+  .featured-products .product img { 
+    height: 180px; /* 👈 Уменьши высоту */
+    object-fit: cover;
+    object-position: center;
+  }
   .products { gap: 1.2rem; }
+}
 
   /* Корзина */
   .cart-item {
