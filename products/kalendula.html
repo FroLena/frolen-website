@@ -3,13 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Алоэ — ФроЛен ЕКБ</title>
-  <meta name="description" content="Натуральное мыло с алоэ ручной работы. Увлажняет и успокаивает кожу.">
+  <title>Календула — ФроЛен ЕКБ</title>
+  <meta name="description" content="Мыло с календулой — идеальный выбор для чувствительной, склонной к раздражению кожи. Успокаивает, снимает покраснения.">
   <link rel="stylesheet" href="../style.css">
 </head>
 <body>
 
-<!-- ЕДИНЫЙ HEADER -->
 <header>
   <div class="header-top">
     <img src="../logo.webp" alt="ФроЛен ЕКБ" class="logo">
@@ -30,48 +29,24 @@
   </nav>
 </header>
 
-<!-- Основной контент -->
 <div class="container">
-  <div class="product-detail">
-    <!-- твой контент -->
-  </div>
-</div>
-
-<footer>...</footer>
-
-<!-- Скрипт для корзины -->
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const count = JSON.parse(localStorage.getItem('cart'))?.reduce((sum, item) => sum + item.quantity, 0) || 0;
-    if (document.getElementById('cart-count')) {
-      document.getElementById('cart-count').textContent = count;
-    }
-  });
-</script>
-
-</body>
-</html>
-
-<div class="container">
-
   <div class="product-detail">
     <img src="../photos/mylo/kalendula.webp" alt="Мыло Календула" style="width:100%; max-width:500px; border-radius:16px; margin-bottom:1.5rem; height: auto;">
-    
+
     <h2>Календула</h2>
     <div class="price">270 ₽</div>
-    
+
     <h3>Описание</h3>
     <p>Мыло с календулой — идеальный выбор для чувствительной, склонной к раздражению кожи. Инфуз календулы на хлопковом масле успокаивает, снимает покраснения и способствует заживлению мелких повреждений. Подходит даже для детей и после бритья.</p>
-    
+
     <h3>Состав</h3>
     <p>Омыленные масла (инфуз календулы на хлопковом масле), вода, порошок календулы, лактат натрия, цитрат натрия, хлорид натрия.</p>
-    
+
     <h3>Рекомендации</h3>
     <p>Используйте ежедневно для умывания или душа. Особенно эффективно при склонности к аллергии, розацеа, после эпиляции.</p>
-    
+
     <a href="https://t.me/parentvoeimamy?text=Хочу%20заказать%20Календулу" class="btn" style="margin-top:1.5rem; display: inline-block;">Заказать</a>
   </div>
-
 </div>
 
 <footer>
@@ -81,6 +56,15 @@
     Доставка по Екатеринбургу • Натуральный состав • Ручная работа
   </p>
 </footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const count = JSON.parse(localStorage.getItem('cart'))?.reduce((sum, item) => sum + item.quantity, 0) || 0;
+    if (document.getElementById('cart-count')) {
+      document.getElementById('cart-count').textContent = count;
+    }
+  });
+</script>
 
 </body>
 </html>
