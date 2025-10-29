@@ -21,8 +21,9 @@
 
   <nav class="main-nav">
     <a href="../index.html">Главная</a>
-    <a href="../mylo.html">Мыло</a>
+    <a href="../mylo.html" class="active">Мыло</a> <!-- Активная ссылка -->
     <a href="../probniki.html">Пробники</a>
+    <a href="../pod_zakaz.html">Под заказ</a> <!-- Новая ссылка -->
     <a href="../svechi.html">Свечи</a>
     <a href="../dostavka.html">Доставка</a>
     <a href="../faq.html">Вопросы</a>
@@ -32,7 +33,7 @@
 
 <!-- Основной контент -->
 <div class="container">
-  <div class="product-detail">
+  <div class="product-page">
     <img src="../photos/mylo/aloe.webp" alt="Мыло Алоэ" style="width:100%; max-width:500px; border-radius:16px; margin-bottom:1.5rem; height: auto;">
 
     <h2>Алоэ</h2>
@@ -49,12 +50,85 @@
 
     <a href="https://t.me/parentvoeimamy?text=Хочу%20заказать%20Алоэ" class="btn" style="margin-top:1.5rem; display: inline-block;">Заказать</a>
   </div>
+
+  <!-- Блок "Похожие товары" -->
+  <div class="container"> <!-- Используем обертку container для отступов -->
+    <h2 class="section-title">Похожие товары</h2>
+    <div class="products"> <!-- Используем существующий класс products для сетки -->
+
+      <!-- Пример карточки похожего товара (Календула) -->
+      <article class="product">
+        <a href="kalendula.html"> <!-- Ссылка на другую страницу товара -->
+          <img src="../photos/mylo/kalendula.webp" alt="Мыло Календула">
+        </a>
+        <div class="product-info">
+          <h3><a href="kalendula.html" style="color: inherit; text-decoration: none;">Календула</a></h3> <!-- Ссылка на заголовке -->
+          <div class="price">270 ₽</div>
+          <p class="desc">Омыленные масла (инфуз календулы на хлопковом масле), вода, порошок календулы.</p>
+          <div class="product-actions">
+            <a href="kalendula.html" class="btn-secondary">Подробнее</a>
+            <button class="btn-primary add-to-cart"
+                    data-id="kalendula"
+                    data-name="Календула"
+                    data-price="270"
+                    data-image="../photos/mylo/kalendula.webp">В корзину</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Пример карточки похожего товара (Медовое) -->
+      <article class="product">
+        <a href="medovoe.html">
+          <img src="../photos/mylo/medovoe.webp" alt="Мыло Медовое">
+        </a>
+        <div class="product-info">
+          <h3><a href="medovoe.html" style="color: inherit; text-decoration: none;">Медовое</a></h3>
+          <div class="price">350 ₽</div>
+          <p class="desc">Омыленные масла (пальмовое, кокосовое, миндальное, облепиховое), мёд, отдушка.</p>
+          <div class="product-actions">
+            <a href="medovoe.html" class="btn-secondary">Подробнее</a>
+            <button class="btn-primary add-to-cart"
+                    data-id="medovoe"
+                    data-name="Медовое"
+                    data-price="350"
+                    data-image="../photos/mylo/medovoe.webp">В корзину</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Пример карточки похожего товара (Шунгит) -->
+      <article class="product">
+        <a href="shungit.html">
+          <img src="../photos/mylo/shungit.webp" alt="Мыло Шунгит">
+        </a>
+        <div class="product-info">
+          <h3><a href="shungit.html" style="color: inherit; text-decoration: none;">Шунгит</a></h3>
+          <div class="price">350 ₽</div>
+          <p class="desc">Омыленные масла, отвар эвкалипта, шунгит, отдушка косметическая.</p>
+          <div class="product-actions">
+            <a href="shungit.html" class="btn-secondary">Подробнее</a>
+            <button class="btn-primary add-to-cart"
+                    data-id="shungit"
+                    data-name="Шунгит"
+                    data-price="350"
+                    data-image="../photos/mylo/shungit.webp">В корзину</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Добавь сюда больше карточек из категории mylo -->
+      <!-- Пример: -->
+      <!-- <article class="product"> ... </article> -->
+
+    </div>
+  </div>
+  <!-- Конец блока "Похожие товары" -->
+
 </div>
 
-<!-- FOOTER -->
 <footer>
   <p>Хотите заказать или уточнить детали?</p>
-  <a href="https://t.me/parentvoeimamy" class="btn" target="_blank">📩 Написать в Telegram</a> <!-- Убраны лишние пробелы -->
+  <a href="https://t.me/parentvoeimamy" class="btn" target="_blank">📩 Написать в Telegram</a>
   <p style="margin-top: 1rem; font-size: 0.9rem; color: #888;">
     Доставка по Екатеринбургу • Натуральный состав • Ручная работа
   </p>
