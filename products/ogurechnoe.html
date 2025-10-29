@@ -9,7 +9,6 @@
 </head>
 <body>
 
-<!-- ЕДИНЫЙ HEADER -->
 <header>
   <div class="header-top">
     <img src="../logo.webp" alt="ФроЛен ЕКБ" class="logo">
@@ -18,6 +17,7 @@
       <p class="subtitle">Натуральное мыло и свечи ручной работы</p>
     </div>
   </div>
+
   <nav class="main-nav">
     <a href="../index.html">Главная</a>
     <a href="../mylo.html">Мыло</a>
@@ -30,25 +30,23 @@
 </header>
 
 <div class="container">
-
   <div class="product-detail">
     <img src="../photos/mylo/ogurechnoe.webp" alt="Огуречное мыло" style="width:100%; max-width:500px; border-radius:16px; margin-bottom:1.5rem; height: auto;">
-    
+
     <h2>Огуречное</h2>
     <div class="price">200 ₽</div>
-    
+
     <h3>Описание</h3>
     <p>Огуречное мыло — свежесть и лёгкость в каждом использовании. Сок и жмых огурца тонизируют, сужают поры и придают коже ощущение чистоты.</p>
-    
+
     <h3>Состав</h3>
     <p>Омыленные масла (хлопковое), сок огурца, лактат натрия, цитрат натрия, жмых огурца.</p>
-    
+
     <h3>Рекомендации</h3>
     <p>Идеально для утреннего умывания и жирной кожи. Освежает даже в самый жаркий день.</p>
-    
+
     <a href="https://t.me/parentvoeimamy?text=Хочу%20заказать%20Огуречное" class="btn" style="margin-top:1.5rem; display: inline-block;">Заказать</a>
   </div>
-
 </div>
 
 <footer>
@@ -58,6 +56,15 @@
     Доставка по Екатеринбургу • Натуральный состав • Ручная работа
   </p>
 </footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const count = JSON.parse(localStorage.getItem('cart'))?.reduce((sum, item) => sum + item.quantity, 0) || 0;
+    if (document.getElementById('cart-count')) {
+      document.getElementById('cart-count').textContent = count;
+    }
+  });
+</script>
 
 </body>
 </html>
