@@ -932,3 +932,33 @@ footer {
     font-size: 0.85rem;
   }
 }
+/* =============================
+   Кастомный скроллбар
+   ============================= */
+
+/* Для Webkit браузеров (Chrome, Safari, Edge, Opera) */
+::-webkit-scrollbar {
+  width: 12px; /* Ширина вертикального скроллбара */
+  height: 12px; /* Высота горизонтального скроллбара */
+}
+
+::-webkit-scrollbar-track {
+  background: var(--beige); /* Цвет фона трека */
+  border-radius: 10px; /* Закругление трека */
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--olive); /* Цвет "бегунка" */
+  border-radius: 10px; /* Закругление "бегунка" */
+  border: 2px solid var(--beige); /* Граница вокруг "бегунка" для лучшего вида */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #556b2f; /* Более тёмный цвет при наведении */
+}
+
+/* Для Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--olive) var(--beige);
+}
