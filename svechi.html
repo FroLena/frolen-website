@@ -3,8 +3,29 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>ФроЛен ЕКБ — Свечи ручной работы</title>
+  <title>ФроЛен ЕКБ — Свечи</title>
   <link rel="stylesheet" href="style.css">
+  <!-- Schema.org BreadcrumbList JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Главная",
+        "item": "https://fralen-ekb.ru/index.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Свечи",
+        "item": "https://fralen-ekb.ru/svechi.html"
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -32,32 +53,24 @@
 <div class="container">
 
   <section class="category">
-    <h2 class="section-title">🕯️ Свечи</h2>
+    <h2>🕯️ Свечи</h2>
+    <p>Создайте атмосферу уюта и тепла в вашем доме с нашими натуральными свечами ручной работы.</p>
+
+    <!-- Хлебные крошки -->
+    <nav class="breadcrumbs" aria-label="Навигационная цепочка">
+      <a href="index.html">Главная</a> >
+      <span>Свечи</span>
+    </nav>
+    <!-- Конец хлебных крошек -->
+
+    <!-- Товары -->
     <div class="products">
-
-      <div class="product">
-        <img src="photos/svechi/svecha_853.webp" alt="Свеча 8,53">
-        <div class="product-info">
-          <h3>Свеча 8,53</h3>
-          <div class="price">150 ₽</div>
-          <p class="desc">Высота - 8,5 см, Диаметр - 3 см</p>
-          <div class="product-actions">
-            <a href="products/svecha_853.html" class="btn-secondary">Подробнее</a>
-            <button class="btn-primary add-to-cart"
-                    data-id="svecha_853"
-                    data-name="Свеча 8,53"
-                    data-price="150"
-                    data-image="photos/svechi/svecha_853.webp">В корзину</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="product">
+      <article class="product">
         <img src="photos/svechi/svecha_133.webp" alt="Свеча 133">
         <div class="product-info">
           <h3>Свеча 133</h3>
           <div class="price">200 ₽</div>
-          <p class="desc">Высота - 13 см, Диаметр - 3 см</p>
+          <p class="desc">Высота: 13 см, Диаметр: 3 см. Более высокая свеча для длительного горения.</p>
           <div class="product-actions">
             <a href="products/svecha_133.html" class="btn-secondary">Подробнее</a>
             <button class="btn-primary add-to-cart"
@@ -67,14 +80,14 @@
                     data-image="photos/svechi/svecha_133.webp">В корзину</button>
           </div>
         </div>
-      </div>
+      </article>
 
-      <div class="product">
+      <article class="product">
         <img src="photos/svechi/svecha_82.webp" alt="Свеча 82">
         <div class="product-info">
           <h3>Свеча 82</h3>
           <div class="price">100 ₽</div>
-          <p class="desc">Высота - 8 см, Диаметр - 2 см</p>
+          <p class="desc">Высота: 8 см, Диаметр: 2 см. Компактная свеча для небольших пространств.</p>
           <div class="product-actions">
             <a href="products/svecha_82.html" class="btn-secondary">Подробнее</a>
             <button class="btn-primary add-to-cart"
@@ -84,14 +97,31 @@
                     data-image="photos/svechi/svecha_82.webp">В корзину</button>
           </div>
         </div>
-      </div>
+      </article>
 
-      <div class="product">
+      <article class="product">
+        <img src="photos/svechi/svecha_853.webp" alt="Свеча 8,53">
+        <div class="product-info">
+          <h3>Свеча 8,53</h3>
+          <div class="price">150 ₽</div>
+          <p class="desc">Высота: 8,5 см, Диаметр: 3 см. Свеча ручной работы из натурального воска.</p>
+          <div class="product-actions">
+            <a href="products/svecha_853.html" class="btn-secondary">Подробнее</a>
+            <button class="btn-primary add-to-cart"
+                    data-id="svecha_853"
+                    data-name="Свеча 8,53"
+                    data-price="150"
+                    data-image="photos/svechi/svecha_853.webp">В корзину</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product">
         <img src="photos/svechi/svecha_952.webp" alt="Свеча 9,52">
         <div class="product-info">
           <h3>Свеча 9,52</h3>
           <div class="price">150 ₽</div>
-          <p class="desc">Высота - 9,5 см, Диаметр - 2 см</p>
+          <p class="desc">Высота: 9,5 см, Диаметр: 2 см. Элегантная свеча среднего размера.</p>
           <div class="product-actions">
             <a href="products/svecha_952.html" class="btn-secondary">Подробнее</a>
             <button class="btn-primary add-to-cart"
@@ -101,8 +131,7 @@
                     data-image="photos/svechi/svecha_952.webp">В корзину</button>
           </div>
         </div>
-      </div>
-
+      </article>
     </div>
   </section>
 
@@ -118,9 +147,7 @@
 
 <!-- Yandex.Metrika counter -->
 <script type="text/javascript">
-  (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-  m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-  (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+  (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
 
   ym(104870619, "init", {
     clickmap: true,
