@@ -154,6 +154,7 @@ body {
 }
 .product img {
   width: 100%;
+  max-width: 100%;
   height: auto; /* 👈 Убираем фиксированную высоту */
   object-fit: contain; /* 👈 Используем contain вместо cover */
   object-position: center;
