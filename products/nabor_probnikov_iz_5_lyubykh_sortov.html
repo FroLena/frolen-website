@@ -17,6 +17,7 @@
       <p class="subtitle">Натуральное мыло и свечи ручной работы</p>
     </div>
   </div>
+
   <nav class="main-nav">
     <a href="../index.html">Главная</a>
     <a href="../mylo.html">Мыло</a>
@@ -29,25 +30,23 @@
 </header>
 
 <div class="container">
-
   <div class="product-detail">
     <img src="../photos/probniki/nabor_probnikov_iz_5_lyubykh_sortov.webp" alt="Набор пробников из 5 сортов" style="width:100%; max-width:500px; border-radius:16px; margin-bottom:1.5rem; height: auto;">
-    
+
     <h2>Набор пробников из 5 любых сортов</h2>
     <div class="price">300 ₽</div>
-    
+
     <h3>Описание</h3>
     <p>Идеальный способ познакомиться с ассортиментом! Выберите 5 сортов мыла на свой вкус — и попробуйте, что подходит именно вам.</p>
-    
+
     <h3>Доступные сорта</h3>
     <p>Кофейное, Медовое, Шунгит, Солнечная магия, Лавандовый вечер, Шелковое, Богемская Роза, Ромашковый рай, Три глины, Мужская сила, Пенное наслаждение, Мыло с грязью Сакского озера.</p>
-    
+
     <h3>Рекомендации</h3>
     <p>Отличный подарок или стартовый набор для новичков. Каждый пробник рассчитан на 2–3 применения.</p>
-    
+
     <a href="https://t.me/parentvoeimamy?text=Хочу%20заказать%20Набор%20пробников%20из%205%20любых%20сортов" class="btn" style="margin-top:1.5rem; display: inline-block;">Заказать</a>
   </div>
-
 </div>
 
 <footer>
@@ -57,6 +56,15 @@
     Доставка по Екатеринбургу • Натуральный состав • Ручная работа
   </p>
 </footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const count = JSON.parse(localStorage.getItem('cart'))?.reduce((sum, item) => sum + item.quantity, 0) || 0;
+    if (document.getElementById('cart-count')) {
+      document.getElementById('cart-count').textContent = count;
+    }
+  });
+</script>
 
 </body>
 </html>
