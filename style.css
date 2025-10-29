@@ -127,21 +127,29 @@ body {
   border-bottom: 2px solid var(--pink);
 }
 
-/* Стили для обычных сеток товаров (например, на главной странице, кроме карусели) */
-.products:not(.products-carousel) {
+/* Стили для обычных сеток товаров (например, на страницах категорий) */
+.products {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1.5rem;
   margin-bottom: 2rem;
 }
 @media (min-width: 769px) {
-  .products:not(.products-carousel) {
+  .products {
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 1.8rem;
   }
 }
 
 /* Стили для карусели */
+.carousel-wrapper {
+  overflow: hidden; /* Скрывает товары за пределами области просмотра */
+  width: 100%;
+  max-width: calc(3 * (280px + 1.8rem) - 1.8rem); /* Примерная ширина для 3 карточек + отступы */
+  border-radius: 16px; /* Скругление краев */
+  box-shadow: 0 4px 12px var(--shadow); /* Тень */
+}
+
 .products-carousel {
   display: flex; /* Для карусели используем flex */
   transition: transform 0.5s ease-in-out; /* Плавное перемещение */
@@ -160,10 +168,17 @@ body {
   .products-carousel .product {
     flex: 0 0 calc((100% - 1 * 1.2rem) / 2); /* 2 карточки в ряд */
   }
+  .carousel-wrapper {
+    max-width: calc(2 * (200px + 1.2rem) - 1.2rem); /* Примерная ширина для 2 карточек */
+  }
 }
 @media (max-width: 480px) {
   .products-carousel .product {
     flex: 0 0 100%; /* 1 карточка в ряд */
+  }
+  .carousel-wrapper {
+    max-width: 100%; /* На мобильном — вся ширина */
+    border-radius: 12px;
   }
 }
 
