@@ -147,6 +147,7 @@ body {
   overflow: hidden;
   box-shadow: 0 4px 12px var(--shadow);
   transition: transform 0.2s ease;
+  position: relative; /* 👈 Добавь эту строку! */
 }
 .product:hover {
   transform: translateY(-4px);
