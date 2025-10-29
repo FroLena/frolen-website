@@ -3,13 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Алоэ — ФроЛен ЕКБ</title>
-  <meta name="description" content="Натуральное мыло с алоэ ручной работы. Увлажняет и успокаивает кожу.">
+  <title>Лавандовый мешочек 15 гр — ФроЛен ЕКБ</title>
+  <meta name="description" content="Лавандовый мешочек — небольшой контейнер с сухими цветами лаванды. Наполняет пространство нежным ароматом, способствует расслаблению.">
   <link rel="stylesheet" href="../style.css">
 </head>
 <body>
 
-<!-- ЕДИНЫЙ HEADER -->
 <header>
   <div class="header-top">
     <img src="../logo.webp" alt="ФроЛен ЕКБ" class="logo">
@@ -30,48 +29,24 @@
   </nav>
 </header>
 
-<!-- Основной контент -->
 <div class="container">
-  <div class="product-detail">
-    <!-- твой контент -->
-  </div>
-</div>
-
-<footer>...</footer>
-
-<!-- Скрипт для корзины -->
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const count = JSON.parse(localStorage.getItem('cart'))?.reduce((sum, item) => sum + item.quantity, 0) || 0;
-    if (document.getElementById('cart-count')) {
-      document.getElementById('cart-count').textContent = count;
-    }
-  });
-</script>
-
-</body>
-</html>
-
-<div class="container">
-
   <div class="product-detail">
     <img src="../photos/probniki/lavandovyy_meshochek_15_gr.webp" alt="Лавандовый мешочек" style="width:100%; max-width:500px; border-radius:16px; margin-bottom:1.5rem; height: auto;">
-    
+
     <h2>Лавандовый мешочек 15 гр</h2>
     <div class="price">100 ₽</div>
-    
+
     <h3>Описание</h3>
     <p>Лавандовый мешочек — это небольшой контейнер, наполненный сухими цветами лаванды. Он наполняет пространство нежным ароматом, способствует расслаблению и спокойному сну.</p>
-    
+
     <h3>Как использовать</h3>
     <p>Положите мешочек в шкаф с бельём, под подушку или в ящик комода. Аромат сохраняется до 2–3 месяцев.</p>
-    
+
     <h3>Состав</h3>
     <p>100% натуральные сухие цветы лаванды, хлопковый мешочек.</p>
-    
+
     <a href="https://t.me/parentvoeimamy?text=Хочу%20заказать%20Лавандовый%20мешочек%2015%20гр" class="btn" style="margin-top:1.5rem; display: inline-block;">Заказать</a>
   </div>
-
 </div>
 
 <footer>
@@ -81,6 +56,15 @@
     Доставка по Екатеринбургу • Натуральный состав • Ручная работа
   </p>
 </footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const count = JSON.parse(localStorage.getItem('cart'))?.reduce((sum, item) => sum + item.quantity, 0) || 0;
+    if (document.getElementById('cart-count')) {
+      document.getElementById('cart-count').textContent = count;
+    }
+  });
+</script>
 
 </body>
 </html>
