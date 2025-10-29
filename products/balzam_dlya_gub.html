@@ -3,13 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Алоэ — ФроЛен ЕКБ</title>
-  <meta name="description" content="Натуральное мыло с алоэ ручной работы. Увлажняет и успокаивает кожу.">
+  <title>Бальзам для Губ — ФроЛен ЕКБ</title>
+  <meta name="description" content="Натуральный бальзам для губ на основе хлопкового масла и пчелиного воска. Интенсивно смягчает, защищает от ветра и мороза.">
   <link rel="stylesheet" href="../style.css">
 </head>
 <body>
 
-<!-- ЕДИНЫЙ HEADER -->
 <header>
   <div class="header-top">
     <img src="../logo.webp" alt="ФроЛен ЕКБ" class="logo">
@@ -30,48 +29,24 @@
   </nav>
 </header>
 
-<!-- Основной контент -->
 <div class="container">
-  <div class="product-detail">
-    <!-- твой контент -->
-  </div>
-</div>
-
-<footer>...</footer>
-
-<!-- Скрипт для корзины -->
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const count = JSON.parse(localStorage.getItem('cart'))?.reduce((sum, item) => sum + item.quantity, 0) || 0;
-    if (document.getElementById('cart-count')) {
-      document.getElementById('cart-count').textContent = count;
-    }
-  });
-</script>
-
-</body>
-</html>
-
-<div class="container">
-
   <div class="product-detail">
     <img src="../photos/probniki/balzam_dlya_gub.webp" alt="Бальзам для Губ" style="width:100%; max-width:500px; border-radius:16px; margin-bottom:1.5rem; height: auto;">
-    
+
     <h2>Бальзам для Губ</h2>
     <div class="price">150 ₽</div>
-    
+
     <h3>Описание</h3>
     <p>Натуральный бальзам для губ на основе хлопкового масла и пчелиного воска. Интенсивно смягчает, защищает от ветра и мороза, не содержит синтетики.</p>
-    
+
     <h3>Состав</h3>
     <p>Хлопковое масло, пчелиный воск, витамин Е.</p>
-    
+
     <h3>Рекомендации</h3>
     <p>Наносите по мере необходимости. Подходит для ежедневного использования.</p>
-    
+
     <a href="https://t.me/parentvoeimamy?text=Хочу%20заказать%20Бальзам%20для%20Губ" class="btn" style="margin-top:1.5rem; display: inline-block;">Заказать</a>
   </div>
-
 </div>
 
 <footer>
@@ -81,6 +56,15 @@
     Доставка по Екатеринбургу • Натуральный состав • Ручная работа
   </p>
 </footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const count = JSON.parse(localStorage.getItem('cart'))?.reduce((sum, item) => sum + item.quantity, 0) || 0;
+    if (document.getElementById('cart-count')) {
+      document.getElementById('cart-count').textContent = count;
+    }
+  });
+</script>
 
 </body>
 </html>
