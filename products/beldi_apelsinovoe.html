@@ -9,6 +9,7 @@
 </head>
 <body>
 
+<!-- ЕДИНЫЙ HEADER -->
 <header>
   <div class="header-top">
     <img src="../logo.webp" alt="ФроЛен ЕКБ" class="logo">
@@ -22,6 +23,7 @@
     <a href="../index.html">Главная</a>
     <a href="../mylo.html">Мыло</a>
     <a href="../probniki.html">Пробники</a>
+    <a href="../pod_zakaz.html" class="active">Под заказ</a>
     <a href="../svechi.html">Свечи</a>
     <a href="../dostavka.html">Доставка</a>
     <a href="../faq.html">Вопросы</a>
@@ -29,8 +31,9 @@
   </nav>
 </header>
 
+<!-- Основной контент -->
 <div class="container">
-  <div class="product-detail">
+  <div class="product-page">
     <img src="../photos/probniki/beldi_apelsinovoe.webp" alt="Бельди Апельсиновое" style="width:100%; max-width:500px; border-radius:16px; margin-bottom:1.5rem; height: auto;">
 
     <h2>Бельди Апельсиновое</h2>
@@ -47,6 +50,72 @@
 
     <a href="https://t.me/parentvoeimamy?text=Хочу%20заказать%20Бельди%20Апельсиновое" class="btn" style="margin-top:1.5rem; display: inline-block;">Заказать</a>
   </div>
+
+  <!-- Блок "Похожие товары" -->
+  <div class="container">
+    <h2 class="section-title">Похожие товары</h2>
+    <div class="products">
+      <!-- Бальзам для Губ -->
+      <article class="product">
+        <a href="balzam_dlya_gub.html">
+          <img src="../photos/probniki/balzam_dlya_gub.webp" alt="Бальзам для Губ">
+        </a>
+        <div class="product-info">
+          <h3><a href="balzam_dlya_gub.html" style="color: inherit; text-decoration: none;">Бальзам для Губ</a></h3>
+          <div class="price">150 ₽</div>
+          <p class="desc">Натуральный бальзам для губ на основе хлопкового масла и пчелиного воска.</p>
+          <div class="product-actions">
+            <a href="balzam_dlya_gub.html" class="btn-secondary">Подробнее</a>
+            <button class="btn-primary add-to-cart"
+                    data-id="balzam_dlya_gub"
+                    data-name="Бальзам для Губ"
+                    data-price="150"
+                    data-image="../photos/probniki/balzam_dlya_gub.webp">В корзину</button>
+          </div>
+        </div>
+      </article>
+      <!-- Бельди винное -->
+      <article class="product">
+        <a href="beldi_vinnoe.html">
+          <img src="../photos/probniki/beldi_vinnoe.webp" alt="Бельди винное">
+        </a>
+        <div class="product-info">
+          <h3><a href="beldi_vinnoe.html" style="color: inherit; text-decoration: none;">Бельди винное</a></h3>
+          <div class="price">540 ₽</div>
+          <p class="desc">Винное бельди — это уникальная разновидность традиционного марокканского мыла.</p>
+          <div class="product-actions">
+            <a href="beldi_vinnoe.html" class="btn-secondary">Подробнее</a>
+            <button class="btn-primary add-to-cart"
+                    data-id="beldi_vinnoe"
+                    data-name="Бельди винное"
+                    data-price="540"
+                    data-image="../photos/probniki/beldi_vinnoe.webp">В корзину</button>
+          </div>
+        </div>
+      </article>
+      <!-- Ванночка для ног -->
+      <article class="product">
+        <a href="vannochka_dlya_nog.html">
+          <img src="../photos/probniki/vannochka_dlya_nog.webp" alt="Ванночка для ног">
+        </a>
+        <div class="product-info">
+          <h3><a href="vannochka_dlya_nog.html" style="color: inherit; text-decoration: none;">Ванночка для ног</a></h3>
+          <div class="price">150 ₽</div>
+          <p class="desc">Натуральная солевая ванночка для ног — снимает усталость, дарит лёгкость и массажный эффект.</p>
+          <div class="product-actions">
+            <a href="vannochka_dlya_nog.html" class="btn-secondary">Подробнее</a>
+            <button class="btn-primary add-to-cart"
+                    data-id="vannochka_dlya_nog"
+                    data-name="Ванночка для ног"
+                    data-price="150"
+                    data-image="../photos/probniki/vannochka_dlya_nog.webp">В корзину</button>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+  <!-- Конец блока "Похожие товары" -->
+
 </div>
 
 <footer>
@@ -57,6 +126,7 @@
   </p>
 </footer>
 
+<!-- Скрипт для корзины -->
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     const count = JSON.parse(localStorage.getItem('cart'))?.reduce((sum, item) => sum + item.quantity, 0) || 0;
