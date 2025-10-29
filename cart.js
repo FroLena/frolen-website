@@ -1,4 +1,4 @@
-// cart.js — минимальная корзина для тестирования
+// cart.js — корзина для ФроЛен ЕКБ с анимацией прыжка кнопки
 
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
@@ -29,10 +29,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
       localStorage.setItem('cart', JSON.stringify(cart));
       updateCartCount();
+
+      // --- Код для анимации и визуальной обратной связи ---
+      // Добавляем класс анимации
+      button.classList.add('bounce-animation');
+      // Изменяем цвет фона
       button.style.backgroundColor = '#d35400';
+
+      // Удаляем класс анимации и сбрасываем цвет после завершения анимации
       setTimeout(() => {
-        button.style.backgroundColor = '';
-      }, 500);
+        button.classList.remove('bounce-animation');
+        // Сброс цвета фона, если он не был изменен другим способом
+        if (button.style.backgroundColor === 'rgb(211, 84, 0)') { // Проверяем, не изменился ли цвет
+            button.style.backgroundColor = '';
+        }
+      }, 500); // 500ms - длительность анимации
+      // --- Конец кода для анимации ---
     });
   });
 });
