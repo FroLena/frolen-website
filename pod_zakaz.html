@@ -3,12 +3,32 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Только под заказ — ФроЛен ЕКБ</title>
+  <title>ФроЛен ЕКБ — Только под заказ</title>
   <link rel="stylesheet" href="style.css">
+  <!-- Schema.org BreadcrumbList JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Главная",
+        "item": "https://fralen-ekb.ru/index.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Под заказ",
+        "item": "https://fralen-ekb.ru/pod_zakaz.html"
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
 
-<!-- ЕДИНЫЙ HEADER -->
 <header>
   <div class="header-top">
     <img src="logo.webp" alt="ФроЛен ЕКБ" class="logo">
@@ -22,7 +42,7 @@
     <a href="index.html">Главная</a>
     <a href="mylo.html">Мыло</a>
     <a href="probniki.html">Пробники</a>
-    <a href="pod_zakaz.html" class="active">Под заказ</a> <!-- Активная ссылка -->
+    <a href="pod_zakaz.html" class="active">Под заказ</a>
     <a href="svechi.html">Свечи</a>
     <a href="dostavka.html">Доставка</a>
     <a href="faq.html">Вопросы</a>
@@ -30,106 +50,107 @@
   </nav>
 </header>
 
-<!-- Основной контент -->
 <div class="container">
-  <div class="category">
-    <h2>Только под заказ</h2>
+
+  <section class="category">
+    <h2>🌿 Только под заказ</h2>
     <p>Эти товары изготавливаются специально для вас. Срок изготовления уточняйте в Telegram.</p>
-  </div>
 
-  <!-- Товары "Только под заказ" -->
-  <div class="products">
-    <!-- Бальзам для Губ -->
-    <article class="product">
-      <img src="photos/probniki/balzam_dlya_gub.webp" alt="Бальзам для Губ">
-      <div class="product-info">
-        <h3>Бальзам для Губ</h3>
-        <div class="price">150 ₽</div>
-        <p class="desc">Натуральный бальзам для губ на основе хлопкового масла и пчелиного воска.</p>
-        <div class="product-actions">
-          <a href="products/balzam_dlya_gub.html" class="btn-secondary">Подробнее</a>
-          <button class="btn-primary add-to-cart"
-                  data-id="balzam_dlya_gub"
-                  data-name="Бальзам для Губ"
-                  data-price="150"
-                  data-image="photos/probniki/balzam_dlya_gub.webp">В корзину</button>
+    <!-- Хлебные крошки -->
+    <nav class="breadcrumbs" aria-label="Навигационная цепочка">
+      <a href="index.html">Главная</a> >
+      <span>Под заказ</span>
+    </nav>
+    <!-- Конец хлебных крошек -->
+
+    <!-- Товары -->
+    <div class="products">
+      <article class="product">
+        <img src="photos/probniki/balzam_dlya_gub.webp" alt="Бальзам для Губ">
+        <div class="product-info">
+          <h3>Бальзам для Губ</h3>
+          <div class="price">150 ₽</div>
+          <p class="desc">Натуральный бальзам для губ на основе хлопкового масла и пчелиного воска.</p>
+          <div class="product-actions">
+            <a href="products/balzam_dlya_gub.html" class="btn-secondary">Подробнее</a>
+            <button class="btn-primary add-to-cart"
+                    data-id="balzam_dlya_gub"
+                    data-name="Бальзам для Губ"
+                    data-price="150"
+                    data-image="photos/probniki/balzam_dlya_gub.webp">В корзину</button>
+          </div>
         </div>
-      </div>
-    </article>
+      </article>
 
-    <!-- Бельди Апельсиновое -->
-    <article class="product">
-      <img src="photos/probniki/beldi_apelsinovoe.webp" alt="Бельди Апельсиновое">
-      <div class="product-info">
-        <h3>Бельди Апельсиновое</h3>
-        <div class="price">450 ₽</div>
-        <p class="desc">Апельсиновое бельди — это натуральное мыло, разработанное на основе традиционного марокканского бельди.</p>
-        <div class="product-actions">
-          <a href="products/beldi_apelsinovoe.html" class="btn-secondary">Подробнее</a>
-          <button class="btn-primary add-to-cart"
-                  data-id="beldi_apelsinovoe"
-                  data-name="Бельди Апельсиновое"
-                  data-price="450"
-                  data-image="photos/probniki/beldi_apelsinovoe.webp">В корзину</button>
+      <article class="product">
+        <img src="photos/probniki/beldi_apelsinovoe.webp" alt="Бельди Апельсиновое">
+        <div class="product-info">
+          <h3>Бельди Апельсиновое</h3>
+          <div class="price">450 ₽</div>
+          <p class="desc">Апельсиновое бельди — это натуральное мыло, разработанное на основе традиционного марокканского бельди.</p>
+          <div class="product-actions">
+            <a href="products/beldi_apelsinovoe.html" class="btn-secondary">Подробнее</a>
+            <button class="btn-primary add-to-cart"
+                    data-id="beldi_apelsinovoe"
+                    data-name="Бельди Апельсиновое"
+                    data-price="450"
+                    data-image="photos/probniki/beldi_apelsinovoe.webp">В корзину</button>
+          </div>
         </div>
-      </div>
-    </article>
+      </article>
 
-    <!-- Бельди винное -->
-    <article class="product">
-      <img src="photos/probniki/beldi_vinnoe.webp" alt="Бельди винное">
-      <div class="product-info">
-        <h3>Бельди винное</h3>
-        <div class="price">540 ₽</div>
-        <p class="desc">Винное бельди — это уникальная разновидность традиционного марокканского мыла.</p>
-        <div class="product-actions">
-          <a href="products/beldi_vinnoe.html" class="btn-secondary">Подробнее</a>
-          <button class="btn-primary add-to-cart"
-                  data-id="beldi_vinnoe"
-                  data-name="Бельди винное"
-                  data-price="540"
-                  data-image="photos/probniki/beldi_vinnoe.webp">В корзину</button>
+      <article class="product">
+        <img src="photos/probniki/beldi_vinnoe.webp" alt="Бельди винное">
+        <div class="product-info">
+          <h3>Бельди винное</h3>
+          <div class="price">540 ₽</div>
+          <p class="desc">Винное бельди — это уникальная разновидность традиционного марокканского мыла.</p>
+          <div class="product-actions">
+            <a href="products/beldi_vinnoe.html" class="btn-secondary">Подробнее</a>
+            <button class="btn-primary add-to-cart"
+                    data-id="beldi_vinnoe"
+                    data-name="Бельди винное"
+                    data-price="540"
+                    data-image="photos/probniki/beldi_vinnoe.webp">В корзину</button>
+          </div>
         </div>
-      </div>
-    </article>
+      </article>
 
-    <!-- Ванночка для ног -->
-    <article class="product">
-      <img src="photos/probniki/vannochka_dlya_nog.webp" alt="Ванночка для ног">
-      <div class="product-info">
-        <h3>Ванночка для ног</h3>
-        <div class="price">150 ₽</div>
-        <p class="desc">Натуральная солевая ванночка для ног — снимает усталость, дарит лёгкость и массажный эффект.</p>
-        <div class="product-actions">
-          <a href="products/vannochka_dlya_nog.html" class="btn-secondary">Подробнее</a>
-          <button class="btn-primary add-to-cart"
-                  data-id="vannochka_dlya_nog"
-                  data-name="Ванночка для ног"
-                  data-price="150"
-                  data-image="photos/probniki/vannochka_dlya_nog.webp">В корзину</button>
+      <article class="product">
+        <img src="photos/probniki/vannochka_dlya_nog.webp" alt="Ванночка для ног">
+        <div class="product-info">
+          <h3>Ванночка для ног</h3>
+          <div class="price">150 ₽</div>
+          <p class="desc">Натуральная солевая ванночка для ног — снимает усталость, дарит лёгкость и массажный эффект.</p>
+          <div class="product-actions">
+            <a href="products/vannochka_dlya_nog.html" class="btn-secondary">Подробнее</a>
+            <button class="btn-primary add-to-cart"
+                    data-id="vannochka_dlya_nog"
+                    data-name="Ванночка для ног"
+                    data-price="150"
+                    data-image="photos/probniki/vannochka_dlya_nog.webp">В корзину</button>
+          </div>
         </div>
-      </div>
-    </article>
+      </article>
 
-    <!-- Лавандовый мешочек 15 гр -->
-    <article class="product">
-      <img src="photos/probniki/lavandovyy_meshochek_15_gr.webp" alt="Лавандовый мешочек 15 гр">
-      <div class="product-info">
-        <h3>Лавандовый мешочек 15 гр</h3>
-        <div class="price">100 ₽</div>
-        <p class="desc">Лавандовый мешочек — это небольшой контейнер, наполненный сухими цветами лаванды.</p>
-        <div class="product-actions">
-          <a href="products/lavandovyy_meshochek_15_gr.html" class="btn-secondary">Подробнее</a>
-          <button class="btn-primary add-to-cart"
-                  data-id="lavandovyy_meshochek_15_gr"
-                  data-name="Лавандовый мешочек 15 гр"
-                  data-price="100"
-                  data-image="photos/probniki/lavandovyy_meshochek_15_gr.webp">В корзину</button>
+      <article class="product">
+        <img src="photos/probniki/lavandovyy_meshochek_15_gr.webp" alt="Лавандовый мешочек 15 гр">
+        <div class="product-info">
+          <h3>Лавандовый мешочек 15 гр</h3>
+          <div class="price">100 ₽</div>
+          <p class="desc">Лавандовый мешочек — это небольшой контейнер, наполненный сухими цветами лаванды.</p>
+          <div class="product-actions">
+            <a href="products/lavandovyy_meshochek_15_gr.html" class="btn-secondary">Подробнее</a>
+            <button class="btn-primary add-to-cart"
+                    data-id="lavandovyy_meshochek_15_gr"
+                    data-name="Лавандовый мешочек 15 гр"
+                    data-price="100"
+                    data-image="photos/probniki/lavandovyy_meshochek_15_gr.webp">В корзину</button>
+          </div>
         </div>
-      </div>
-    </article>
-
-  </div>
+      </article>
+    </div>
+  </section>
 
 </div>
 
@@ -141,15 +162,25 @@
   </p>
 </footer>
 
-<!-- Скрипт для корзины -->
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const count = JSON.parse(localStorage.getItem('cart'))?.reduce((sum, item) => sum + item.quantity, 0) || 0;
-    if (document.getElementById('cart-count')) {
-      document.getElementById('cart-count').textContent = count;
-    }
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+  (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+  ym(104870619, "init", {
+    clickmap: true,
+    trackLinks: true,
+    accurateTrackBounce: true,
+    webvisor: true,
+    trackHash: true
   });
 </script>
+<noscript>
+  <div>
+    <img src="https://mc.yandex.ru/watch/104870619" style="position:absolute; left:-9999px;" alt="" />
+  </div>
+</noscript>
+<!-- /Yandex.Metrika counter -->
 
+<script src="cart.js"></script>
 </body>
 </html>
