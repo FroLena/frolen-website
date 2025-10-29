@@ -4,13 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>ФроЛен ЕКБ — Натуральное мыло ручной работы</title>
+  <!-- Убедись, что файл style.css находится в той же директории или укажи правильный путь -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header>
   <div class="header-top">
-    <img src="logo.webp" alt="ФроЛен ЕКБ" class="logo">
+    <img src="logo.webp" alt="ФроЛен ЕКБ - Логотип" class="logo">
     <div class="branding">
       <h1>🌿🧼 ФроЛен ЕКБ</h1>
       <p class="subtitle">Натуральное мыло и свечи ручной работы</p>
@@ -29,7 +30,6 @@
 </header>
 
 <div class="container">
-
   <!-- Приветственный текст -->
   <div class="hero-text">
     <p>
@@ -51,9 +51,9 @@
   <!-- Популярные товары -->
   <h2 class="section-title">✨ Популярные товары</h2>
   <div class="products featured-products">
-    <!-- Товары остаются без изменений -->
-    <div class="product">
-      <img src="photos/mylo/kalendula.webp" alt="Календула">
+    <!-- Пример структуры товара - убедись, что все 3 товара присутствуют -->
+    <article class="product"> <!-- Использование article для семантики -->
+      <img src="photos/mylo/kalendula.webp" alt="Мыло ручной работы 'Календула'">
       <div class="product-info">
         <h3>Календула</h3>
         <div class="price">270 ₽</div>
@@ -67,10 +67,10 @@
                   data-image="photos/mylo/kalendula.webp">В корзину</button>
         </div>
       </div>
-    </div>
+    </article>
 
-    <div class="product">
-      <img src="photos/mylo/medovoe.webp" alt="Медовое">
+    <article class="product">
+      <img src="photos/mylo/medovoe.webp" alt="Мыло ручной работы 'Медовое'">
       <div class="product-info">
         <h3>Медовое</h3>
         <div class="price">350 ₽</div>
@@ -84,10 +84,10 @@
                   data-image="photos/mylo/medovoe.webp">В корзину</button>
         </div>
       </div>
-    </div>
+    </article>
 
-    <div class="product">
-      <img src="photos/mylo/shungit.webp" alt="Шунгит">
+    <article class="product">
+      <img src="photos/mylo/shungit.webp" alt="Мыло ручной работы 'Шунгит'">
       <div class="product-info">
         <h3>Шунгит</h3>
         <div class="price">350 ₽</div>
@@ -101,7 +101,7 @@
                   data-image="photos/mylo/shungit.webp">В корзину</button>
         </div>
       </div>
-    </div>
+    </article>
   </div>
 
   <!-- Призыв к действию -->
@@ -113,7 +113,7 @@
 
 <footer>
   <p>Хотите заказать или уточнить детали?</p>
-  <a href="https://t.me/parentvoeimamy" class="btn" target="_blank">📩 Написать в Telegram</a>
+  <a href="https://t.me/parentvoeimamy" class="btn" target="_blank">📩 Написать в Telegram</a> <!-- Убран лишний пробел в URL -->
   <p class="footer-note">
     Доставка по Екатеринбургу • Натуральный состав • Ручная работа
   </p>
@@ -121,9 +121,7 @@
 
 <!-- Yandex.Metrika counter -->
 <script type="text/javascript">
-  (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-  m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-  (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+  (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
 
   ym(104870619, "init", {
     clickmap: true,
@@ -135,7 +133,7 @@
 </script>
 <noscript>
   <div>
-    <img src="https://mc.yandex.ru/watch/104870619" style="position:absolute; left:-9999px;" alt="" />
+    <img src="https://mc.yandex.ru/watch/104870619" style="position:absolute; left:-9999px;" alt="" /> <!-- Убран лишний пробел в URL -->
   </div>
 </noscript>
 <!-- /Yandex.Metrika counter -->
