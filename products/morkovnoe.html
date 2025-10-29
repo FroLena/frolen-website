@@ -17,6 +17,7 @@
       <p class="subtitle">Натуральное мыло и свечи ручной работы</p>
     </div>
   </div>
+
   <nav class="main-nav">
     <a href="../index.html">Главная</a>
     <a href="../mylo.html">Мыло</a>
@@ -27,26 +28,25 @@
     <a href="../cart.html" class="cart-link">🛒 <span id="cart-count">0</span></a>
   </nav>
 </header>
-<div class="container">
 
+<div class="container">
   <div class="product-detail">
     <img src="../photos/mylo/morkovnoe.webp" alt="Морковное мыло" style="width:100%; max-width:500px; border-radius:16px; margin-bottom:1.5rem; height: auto;">
-    
+
     <h2>Морковное</h2>
     <div class="price">250 ₽</div>
-    
+
     <h3>Описание</h3>
     <p>Морковное мыло — источник бета-каротина, который придаёт коже здоровое сияние и улучшает её тонус. Пюре моркови мягко отшелушивает и питает.</p>
-    
+
     <h3>Состав</h3>
     <p>Омыленные масла (хлопковое), вода, пюре моркови, лактат натрия, цитрат натрия.</p>
-    
+
     <h3>Рекомендации</h3>
     <p>Рекомендуется для тусклой, уставшей кожи. Используйте 2–3 раза в неделю для мягкого обновления.</p>
-    
+
     <a href="https://t.me/parentvoeimamy?text=Хочу%20заказать%20Морковное" class="btn" style="margin-top:1.5rem; display: inline-block;">Заказать</a>
   </div>
-
 </div>
 
 <footer>
@@ -56,6 +56,15 @@
     Доставка по Екатеринбургу • Натуральный состав • Ручная работа
   </p>
 </footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const count = JSON.parse(localStorage.getItem('cart'))?.reduce((sum, item) => sum + item.quantity, 0) || 0;
+    if (document.getElementById('cart-count')) {
+      document.getElementById('cart-count').textContent = count;
+    }
+  });
+</script>
 
 </body>
 </html>
