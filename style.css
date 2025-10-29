@@ -782,3 +782,120 @@ footer {
     padding: 0.8rem 1.5rem; /* Возможно, чуть больше паддингов на мобильных */
   }
 }
+
+/* =============================
+   Стили для фильтров и сортировки
+   ============================= */
+
+.filters-sorting {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px var(--shadow);
+}
+
+.filter-group, .sort-group {
+  flex: 1;
+  min-width: 200px;
+}
+
+.filter-group h3, .sort-group h3 {
+  font-size: 1.1rem;
+  color: var(--brown);
+  margin-bottom: 0.8rem;
+  border-bottom: 1px solid var(--pink);
+  padding-bottom: 0.5rem;
+}
+
+/* Стилизация чекбоксов */
+.custom-checkbox {
+  display: block;
+  position: relative;
+  padding-left: 30px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  user-select: none;
+  color: #555;
+  margin-bottom: 0.5rem;
+  transition: color 0.2s;
+}
+
+/* Скрыть стандартный чекбокс */
+.custom-checkbox input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Создание кастомного чекбокса */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: #f8f9fa;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+/* При наведении */
+.custom-checkbox:hover .checkmark {
+  background-color: #e9ecef;
+}
+
+/* Когда чекбокс отмечен */
+.custom-checkbox input:checked ~ .checkmark {
+  background-color: var(--olive);
+  border-color: var(--olive);
+}
+
+/* Создание галочки внутри чекбокса */
+.custom-checkbox input:checked ~ .checkmark:after {
+  content: "";
+  position: absolute;
+  display: block;
+  left: 7px;
+  top: 4px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+/* Стилизация выпадающего списка (селекта) */
+.custom-select {
+  width: 100%;
+  padding: 0.65rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background: #fff;
+  font-size: 0.95rem;
+  color: #555;
+  cursor: pointer;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+
+.custom-select:focus {
+  outline: none;
+  border-color: var(--olive);
+  box-shadow: 0 0 0 2px rgba(107, 142, 35, 0.2);
+}
+
+/* Адаптивность для фильтров */
+@media (max-width: 768px) {
+  .filters-sorting {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .filter-group, .sort-group {
+    min-width: auto;
+  }
+}
