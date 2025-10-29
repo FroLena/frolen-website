@@ -651,3 +651,20 @@ footer {
     font-size: 1.2rem;
   }
 }
+/* Анимация прыжка/масштабирования кнопки "В корзину" */
+@keyframes bounceScale {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1); /* Увеличиваем на 10% */
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Класс для анимации */
+.btn-primary.bounce-animation {
+  animation: bounceScale 0.5s ease-in-out;
+}
