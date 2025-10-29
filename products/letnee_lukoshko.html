@@ -3,13 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Алоэ — ФроЛен ЕКБ</title>
-  <meta name="description" content="Натуральное мыло с алоэ ручной работы. Увлажняет и успокаивает кожу.">
+  <title>Летнее Лукошко — ФроЛен ЕКБ</title>
+  <meta name="description" content="Мыло «Летнее Лукошко» — аромат цветущего сада в вашей ванной. Инфуз розы на высокоолеиновом масле и нежная отдушка.">
   <link rel="stylesheet" href="../style.css">
 </head>
 <body>
 
-<!-- ЕДИНЫЙ HEADER -->
 <header>
   <div class="header-top">
     <img src="../logo.webp" alt="ФроЛен ЕКБ" class="logo">
@@ -30,48 +29,24 @@
   </nav>
 </header>
 
-<!-- Основной контент -->
 <div class="container">
-  <div class="product-detail">
-    <!-- твой контент -->
-  </div>
-</div>
-
-<footer>...</footer>
-
-<!-- Скрипт для корзины -->
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const count = JSON.parse(localStorage.getItem('cart'))?.reduce((sum, item) => sum + item.quantity, 0) || 0;
-    if (document.getElementById('cart-count')) {
-      document.getElementById('cart-count').textContent = count;
-    }
-  });
-</script>
-
-</body>
-</html>
-
-<div class="container">
-
   <div class="product-detail">
     <img src="../photos/mylo/letnee_lukoshko.webp" alt="Летнее Лукошко" style="width:100%; max-width:500px; border-radius:16px; margin-bottom:1.5rem; height: auto;">
-    
+
     <h2>Летнее Лукошко</h2>
     <div class="price">250 ₽</div>
-    
+
     <h3>Описание</h3>
     <p>Мыло «Летнее Лукошко» — это аромат цветущего сада в вашей ванной. Инфуз розы на высокоолеиновом масле и нежная отдушка создают атмосферу уюта и радости.</p>
-    
+
     <h3>Состав</h3>
     <p>Омыленные масла (кокосовое, пальмовое, инфуз розы на высокоолеиновом масле, касторовое, зародышей пшеницы), вода, лактат натрия, цитрат натрия, косметическая отдушка.</p>
-    
+
     <h3>Рекомендации</h3>
     <p>Подходит для всех типов кожи. Используйте для создания расслабляющей атмосферы в душе.</p>
-    
+
     <a href="https://t.me/parentvoeimamy?text=Хочу%20заказать%20Летнее%20Лукошко" class="btn" style="margin-top:1.5rem; display: inline-block;">Заказать</a>
   </div>
-
 </div>
 
 <footer>
@@ -81,6 +56,15 @@
     Доставка по Екатеринбургу • Натуральный состав • Ручная работа
   </p>
 </footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const count = JSON.parse(localStorage.getItem('cart'))?.reduce((sum, item) => sum + item.quantity, 0) || 0;
+    if (document.getElementById('cart-count')) {
+      document.getElementById('cart-count').textContent = count;
+    }
+  });
+</script>
 
 </body>
 </html>
