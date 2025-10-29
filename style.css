@@ -651,112 +651,36 @@ footer {
     font-size: 1.2rem;
   }
 }
-/* Анимация прыжка/масштабирования кнопки "В корзину" */
-@keyframes bounceScale {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.1); /* Увеличиваем на 10% */
-  }
-  100% {
-    transform: scale(1);
-  }
+
+/* =============================
+   Переопределения стилей для страницы товара (product-page)
+   ============================= */
+
+/* Увеличим выразительность заголовка товара */
+.product-page h2 {
+  color: var(--olive); /* Используем оливковый цвет для акцента */
+  font-weight: bold;   /* Делаем жирным */
+  /* font-size: 1.8rem; /* При необходимости можно увеличить размер */ */
 }
 
-/* Класс для анимации */
-.btn-primary.bounce-animation {
-  animation: bounceScale 0.5s ease-in-out;
-}
-/* Карусель */
-.carousel-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  margin-bottom: 2rem;
-  position: relative; /* Для позиционирования стрелок */
-}
-
-.carousel-wrapper {
-  overflow: hidden; /* Скрывает товары за пределами области просмотра */
-  width: 100%;
-  max-width: calc(3 * (280px + 1.8rem) - 1.8rem); /* Примерная ширина для 3 карточек + отступы */
-  border-radius: 16px; /* Скругление краев */
-  box-shadow: 0 4px 12px var(--shadow); /* Тень */
-}
-
-.products.featured-products {
-  display: flex;
-  transition: transform 0.5s ease-in-out; /* Плавное перемещение */
-  gap: 1.8rem; /* Отступы между карточками */
-  padding: 1rem; /* Небольшой отступ внутри */
-}
-
-.product {
-  flex: 0 0 calc((100% - 2 * 1.8rem) / 3); /* Ширина одной карточки для 3 в ряд */
-  min-width: 0; /* Позволяет карточке уменьшаться */
-}
-
-.carousel-btn {
-  background: white;
-  border: 1px solid var(--olive);
-  color: var(--olive);
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  font-size: 1.5rem;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background 0.2s, color 0.2s;
-  z-index: 10; /* Поверх карточек */
-  box-shadow: 0 2px 6px var(--shadow);
-}
-
-.carousel-btn:hover {
-  background: var(--olive);
+/* Изменим стиль кнопки "Заказать", чтобы она выделялась */
+.product-page .btn { /* Предполагается, что у кнопки "Заказать" есть класс .btn */
+  background: var(--orange); /* Используем оранжевый цвет */
   color: white;
+  padding: 0.65rem 1.2rem;
+  border-radius: 24px;
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-block; /* Убедимся, что это строчно-блочный элемент */
+  margin-top: 1.5rem; /* Отступ сверху */
+}
+.product-page .btn:hover {
+  background: #d35400; /* Темнее при наведении */
 }
 
-.carousel-btn:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-  background: #e0e0e0;
-  color: #999;
-  border-color: #ccc;
-}
-
-/* Адаптивность для карусели */
+/* Адаптивность для новой кнопки */
 @media (max-width: 768px) {
-  .carousel-container {
-    gap: 0.5rem;
-  }
-  .carousel-wrapper {
-    max-width: calc(2 * (200px + 1.2rem) - 1.2rem); /* Примерно 2 карточки на планшете */
-  }
-  .product {
-    flex: 0 0 calc((100% - 1 * 1.2rem) / 2); /* 2 карточки в ряд */
-  }
-  .carousel-btn {
-    width: 35px;
-    height: 35px;
-    font-size: 1.2rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .carousel-wrapper {
-    max-width: calc(1 * (100% - 0 * 1.2rem)); /* 1 карточка на мобильном */
-    border-radius: 12px;
-  }
-  .product {
-    flex: 0 0 100%; /* 1 карточка в ряд */
-  }
-  .carousel-btn {
-    width: 30px;
-    height: 30px;
-    font-size: 1rem;
+  .product-page .btn {
+    padding: 0.8rem 1.5rem; /* Возможно, чуть больше паддингов на мобильных */
   }
 }
