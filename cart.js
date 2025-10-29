@@ -1,4 +1,4 @@
-// cart.js — корзина для ФроЛен ЕКБ
+// cart.js — минимальная корзина для тестирования
 
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Обновляем счётчик корзины
   updateCartCount();
 
-  // Обработчик кнопок "Заказать"
+  // Обработчик кнопок "В корзину"
   document.querySelectorAll('.add-to-cart').forEach(button => {
     button.addEventListener('click', () => {
       const id = button.dataset.id;
@@ -29,11 +29,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
       localStorage.setItem('cart', JSON.stringify(cart));
       updateCartCount();
-    button.style.backgroundColor = '#d35400';
-setTimeout(() => {
-  button.style.backgroundColor = '';
-}, 500);
-      
+      button.style.backgroundColor = '#d35400';
+      setTimeout(() => {
+        button.style.backgroundColor = '';
+      }, 500);
     });
   });
 });
