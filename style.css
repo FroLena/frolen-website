@@ -899,3 +899,36 @@ footer {
     min-width: auto;
   }
 }
+/* =============================
+   Стили для хлебных крошек (breadcrumbs)
+   ============================= */
+
+.breadcrumbs {
+  font-size: 0.9rem;
+  color: #777;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #eee;
+}
+
+.breadcrumbs a {
+  color: var(--olive);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.breadcrumbs a:hover {
+  color: var(--brown);
+  text-decoration: underline;
+}
+
+.breadcrumbs span {
+  color: #999;
+}
+
+/* Адаптивность для хлебных крошек */
+@media (max-width: 480px) {
+  .breadcrumbs {
+    font-size: 0.85rem;
+  }
+}
