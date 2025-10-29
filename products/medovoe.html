@@ -9,7 +9,6 @@
 </head>
 <body>
 
-<!-- ЕДИНЫЙ HEADER -->
 <header>
   <div class="header-top">
     <img src="../logo.webp" alt="ФроЛен ЕКБ" class="logo">
@@ -30,24 +29,24 @@
   </nav>
 </header>
 
+<div class="container">
   <div class="product-detail">
     <img src="../photos/mylo/medovoe.webp" alt="Медовое мыло" style="width:100%; max-width:500px; border-radius:16px; margin-bottom:1.5rem; height: auto;">
-    
+
     <h2>Медовое</h2>
     <div class="price">350 ₽</div>
-    
+
     <h3>Описание</h3>
     <p>Медовое мыло — настоящий уход для сухой и уставшей кожи. Натуральный мёд интенсивно питает, удерживает влагу и придаёт коже мягкость. Аромат косметической отдушки создаёт атмосферу уюта и тепла.</p>
-    
+
     <h3>Состав</h3>
     <p>Омыленные масла (пальмовое, кокосовое, миндальное, облепиховое, касторовое, высокоолеиновое), вода, мёд, лактат натрия, цитрат натрия, отдушка косметическая.</p>
-    
+
     <h3>Рекомендации</h3>
     <p>Идеально для вечернего ухода. Подходит для тела и рук. Не рекомендуется для очень жирной кожи лица.</p>
-    
+
     <a href="https://t.me/parentvoeimamy?text=Хочу%20заказать%20Медовое" class="btn" style="margin-top:1.5rem; display: inline-block;">Заказать</a>
   </div>
-
 </div>
 
 <footer>
@@ -57,6 +56,15 @@
     Доставка по Екатеринбургу • Натуральный состав • Ручная работа
   </p>
 </footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const count = JSON.parse(localStorage.getItem('cart'))?.reduce((sum, item) => sum + item.quantity, 0) || 0;
+    if (document.getElementById('cart-count')) {
+      document.getElementById('cart-count').textContent = count;
+    }
+  });
+</script>
 
 </body>
 </html>
