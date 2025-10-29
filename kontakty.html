@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Контакты — ФроЛен ЕКБ</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Schema.org BreadcrumbList JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Главная",
+        "item": "https://fralen-ekb.ru/index.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Контакты",
+        "item": "https://fralen-ekb.ru/kontakty.html"
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<header>
+  <div class="header-top">
+    <img src="logo.webp" alt="ФроЛен ЕКБ" class="logo">
+    <div class="branding">
+      <h1>🌿🧼 ФроЛен ЕКБ</h1>
+      <p class="subtitle">Натуральное мыло и свечи ручной работы</p>
+    </div>
+  </div>
+
+  <nav class="main-nav">
+    <a href="index.html">Главная</a>
+    <a href="mylo.html">Мыло</a>
+    <a href="probniki.html">Пробники</a>
+    <a href="pod_zakaz.html">Под заказ</a>
+    <a href="svechi.html">Свечи</a>
+    <a href="dostavka.html">Доставка</a>
+    <a href="faq.html">Вопросы</a>
+    <a href="cart.html" class="cart-link">🛒 <span id="cart-count">0</span></a>
+  </nav>
+</header>
+
+<div class="container">
+
+  <section class="category">
+    <h2>📞 Контакты</h2>
+    <p>Свяжитесь с нами удобным для вас способом.</p>
+
+    <!-- Хлебные крошки -->
+    <nav class="breadcrumbs" aria-label="Навигационная цепочка">
+      <a href="index.html">Главная</a> >
+      <span>Контакты</span>
+    </nav>
+    <!-- Конец хлебных крошек -->
+
+    <div class="contact-info">
+      <div class="contact-method">
+        <h3>💬 Telegram</h3>
+        <p>Быстро и удобно. Напишите нам в Telegram.</p>
+        <a href="https://t.me/parentvoeimamy" class="btn btn-primary" target="_blank">Написать в Telegram</a>
+      </div>
+
+      <div class="contact-method">
+        <h3>📱 WhatsApp</h3>
+        <p>Связь через мессенджер WhatsApp.</p>
+        <a href="https://wa.me/79536089713" class="btn btn-primary" target="_blank">Написать в WhatsApp</a> <!-- Заменить на настоящий номер -->
+      </div>
+
+      <div class="contact-method">
+        <h3>👥 Группа ВКонтакте</h3>
+        <p>Новости, акции и общение в нашей группе ВКонтакте.</p>
+        <a href="https://vk.ru/frolensoap" class="btn btn-primary" target="_blank">Перейти в группу ВК</a> <!-- Заменить на настоящую ссылку -->
+      </div>
+
+      <div class="contact-method">
+        <h3>☎️ Телефон</h3>
+        <p>Позвоните нам по телефону.</p>
+        <a href="tel:+7XXXXXXXXXX" class="btn btn-primary">+7 (953) 60-89-713</a> <!-- Заменить на настоящий номер -->
+      </div>
+
+      <div class="contact-method">
+        <h3>📧 Email</h3>
+        <p>Напишите нам электронное письмо.</p>
+        <a href="mailto:"mailto:info@fralen-ekb.ru" class="btn btn-primary"> </a> <!-- Заменить на настоящий email -->
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <p>Хотите заказать или уточнить детали?</p>
+  <a href="https://t.me/parentvoeimamy" class="btn" target="_blank">📩 Написать в Telegram</a>
+  <p class="footer-note">
+    Доставка по Екатеринбургу • Натуральный состав • Ручная работа
+  </p>
+</footer>
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+  (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+  ym(104870619, "init", {
+    clickmap: true,
+    trackLinks: true,
+    accurateTrackBounce: true,
+    webvisor: true,
+    trackHash: true
+  });
+</script>
+<noscript>
+  <div>
+    <img src="https://mc.yandex.ru/watch/104870619" style="position:absolute; left:-9999px;" alt="" />
+  </div>
+</noscript>
+<!-- /Yandex.Metrika counter -->
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const count = JSON.parse(localStorage.getItem('cart'))?.reduce((sum, item) => sum + item.quantity, 0) || 0;
+    if (document.getElementById('cart-count')) {
+      document.getElementById('cart-count').textContent = count;
+    }
+  });
+</script>
+
+</body>
+</html>
