@@ -50,60 +50,118 @@
 
   <!-- Популярные товары -->
   <h2 class="section-title">✨ Популярные товары</h2>
-  <div class="products featured-products">
-    <!-- Карточки товаров -->
-    <article class="product"> <!-- Использование article для семантики -->
-      <img src="photos/mylo/kalendula.webp" alt="Мыло ручной работы 'Календула'">
-      <div class="product-info">
-        <h3>Календула</h3>
-        <div class="price">270 ₽</div>
-        <p class="desc">Омыленные масла (инфуз календулы на хлопковом масле), вода, порошок календулы.</p>
-        <div class="product-actions">
-          <a href="products/kalendula.html" class="btn-secondary">Подробнее</a>
-          <button class="btn-primary add-to-cart"
-                  data-id="kalendula"
-                  data-name="Календула"
-                  data-price="270"
-                  data-image="photos/mylo/kalendula.webp">В корзину</button>
-        </div>
-      </div>
-    </article>
+  <div class="carousel-container">
+    <button class="carousel-btn carousel-btn-prev" id="carouselPrev" aria-label="Предыдущие товары">‹</button>
+    <div class="carousel-wrapper">
+      <div class="products products-carousel" id="featuredProductsCarousel">
+        <!-- Карточки товаров -->
+        <article class="product">
+          <img src="photos/mylo/kalendula.webp" alt="Мыло ручной работы 'Календула'">
+          <div class="product-info">
+            <h3>Календула</h3>
+            <div class="price">270 ₽</div>
+            <p class="desc">Омыленные масла (инфуз календулы на хлопковом масле), вода, порошок календулы.</p>
+            <div class="product-actions">
+              <a href="products/kalendula.html" class="btn-secondary">Подробнее</a>
+              <button class="btn-primary add-to-cart"
+                      data-id="kalendula"
+                      data-name="Календула"
+                      data-price="270"
+                      data-image="photos/mylo/kalendula.webp">В корзину</button>
+            </div>
+          </div>
+        </article>
 
-    <article class="product">
-      <img src="photos/mylo/medovoe.webp" alt="Мыло ручной работы 'Медовое'">
-      <div class="product-info">
-        <h3>Медовое</h3>
-        <div class="price">350 ₽</div>
-        <p class="desc">Омыленные масла (пальмовое, кокосовое, миндальное, облепиховое), мёд, отдушка.</p>
-        <div class="product-actions">
-          <a href="products/medovoe.html" class="btn-secondary">Подробнее</a>
-          <button class="btn-primary add-to-cart"
-                  data-id="medovoe"
-                  data-name="Медовое"
-                  data-price="350"
-                  data-image="photos/mylo/medovoe.webp">В корзину</button>
-        </div>
-      </div>
-    </article>
+        <article class="product">
+          <img src="photos/mylo/medovoe.webp" alt="Мыло ручной работы 'Медовое'">
+          <div class="product-info">
+            <h3>Медовое</h3>
+            <div class="price">350 ₽</div>
+            <p class="desc">Омыленные масла (пальмовое, кокосовое, миндальное, облепиховое), мёд, отдушка.</p>
+            <div class="product-actions">
+              <a href="products/medovoe.html" class="btn-secondary">Подробнее</a>
+              <button class="btn-primary add-to-cart"
+                      data-id="medovoe"
+                      data-name="Медовое"
+                      data-price="350"
+                      data-image="photos/mylo/medovoe.webp">В корзину</button>
+            </div>
+          </div>
+        </article>
 
-    <article class="product">
-      <img src="photos/mylo/shungit.webp" alt="Мыло ручной работы 'Шунгит'">
-      <div class="product-info">
-        <h3>Шунгит</h3>
-        <div class="price">350 ₽</div>
-        <p class="desc">Омыленные масла, отвар эвкалипта, шунгит, отдушка косметическая.</p>
-        <div class="product-actions">
-          <a href="products/shungit.html" class="btn-secondary">Подробнее</a>
-          <button class="btn-primary add-to-cart"
-                  data-id="shungit"
-                  data-name="Шунгит"
-                  data-price="350"
-                  data-image="photos/mylo/shungit.webp">В корзину</button>
-        </div>
+        <article class="product">
+          <img src="photos/mylo/shungit.webp" alt="Мыло ручной работы 'Шунгит'">
+          <div class="product-info">
+            <h3>Шунгит</h3>
+            <div class="price">350 ₽</div>
+            <p class="desc">Омыленные масла, отвар эвкалипта, шунгит, отдушка косметическая.</p>
+            <div class="product-actions">
+              <a href="products/shungit.html" class="btn-secondary">Подробнее</a>
+              <button class="btn-primary add-to-cart"
+                      data-id="shungit"
+                      data-name="Шунгит"
+                      data-price="350"
+                      data-image="photos/mylo/shungit.webp">В корзину</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Добавь сюда больше карточек -->
+        <article class="product">
+          <img src="photos/mylo/aloe.webp" alt="Мыло ручной работы 'Алоэ'">
+          <div class="product-info">
+            <h3>Алоэ</h3>
+            <div class="price">280 ₽</div>
+            <p class="desc">Омыленные масла (хлопковое), жмых алоэ, сок алоэ, лактат натрия.</p>
+            <div class="product-actions">
+              <a href="products/aloe.html" class="btn-secondary">Подробнее</a>
+              <button class="btn-primary add-to-cart"
+                      data-id="aloe"
+                      data-name="Алоэ"
+                      data-price="280"
+                      data-image="photos/mylo/aloe.webp">В корзину</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product">
+          <img src="photos/mylo/ogurechnoe.webp" alt="Мыло ручной работы 'Огуречное'">
+          <div class="product-info">
+            <h3>Огуречное</h3>
+            <div class="price">200 ₽</div>
+            <p class="desc">Омыленные масла (хлопковое), сок огурца, лактат натрия, жмых огурца.</p>
+            <div class="product-actions">
+              <a href="products/ogurechnoe.html" class="btn-secondary">Подробнее</a>
+              <button class="btn-primary add-to-cart"
+                      data-id="ogurechnoe"
+                      data-name="Огуречное"
+                      data-price="200"
+                      data-image="photos/mylo/ogurechnoe.webp">В корзину</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product">
+          <img src="photos/mylo/letnee_lukoshko.webp" alt="Мыло ручной работы 'Летнее Лукошко'">
+          <div class="product-info">
+            <h3>Летнее Лукошко</h3>
+            <div class="price">250 ₽</div>
+            <p class="desc">Омыленные масла (кокосовое, пальмовое, инфуз розы на высокоолеиновом масле), вода.</p>
+            <div class="product-actions">
+              <a href="products/letnee_lukoshko.html" class="btn-secondary">Подробнее</a>
+              <button class="btn-primary add-to-cart"
+                      data-id="letnee_lukoshko"
+                      data-name="Летнее Лукошко"
+                      data-price="250"
+                      data-image="photos/mylo/letnee_lukoshko.webp">В корзину</button>
+            </div>
+          </div>
+        </article>
+
       </div>
-    </article>
+    </div>
+    <button class="carousel-btn carousel-btn-next" id="carouselNext" aria-label="Следующие товары">›</button>
   </div>
-
   <!-- Призыв к действию -->
   <div class="cta">
     <a href="mylo.html" class="btn">Выбрать свой уход</a>
