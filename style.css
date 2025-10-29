@@ -154,10 +154,13 @@ body {
 }
 .product img {
   width: 100%;
-  height: 200px;
-  object-fit: cover; /* 👈 ВНЕСЕНО ИЗМЕНЕНИЕ */
-  object-position: center; /* 👈 ВНЕСЕНО ИЗМЕНЕНИЕ */
+  height: auto; /* 👈 Убираем фиксированную высоту */
+  object-fit: contain; /* 👈 Используем contain вместо cover */
+  object-position: center;
   background: #f5f0e6;
+  border-radius: 16px;
+  margin-bottom: 1rem;
+}
 }
 .featured-products .product img { height: 220px; }
 .product-info { padding: 1.2rem; }
