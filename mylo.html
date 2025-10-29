@@ -5,6 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>ФроЛен ЕКБ — Мыло</title>
   <link rel="stylesheet" href="style.css">
+  <!-- Schema.org BreadcrumbList JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Главная",
+        "item": "https://fralen-ekb.ru/index.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Мыло",
+        "item": "https://fralen-ekb.ru/mylo.html"
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -35,78 +56,84 @@
     <h2>🌿 Мыло</h2>
     <p>Выберите мыло по своим предпочтениям.</p>
 
-    <!-- Блок фильтров и сортировки -->
-<div class="filters-sorting">
-  <div class="filter-group">
-    <h3>Фильтры</h3>
-    <div class="filter-item">
-      <label class="custom-checkbox">
-        <input type="checkbox" name="price" value="under200">
-        <span class="checkmark"></span>
-        До 200 ₽
-      </label>
-    </div>
-    <div class="filter-item">
-      <label class="custom-checkbox">
-        <input type="checkbox" name="price" value="200to300">
-        <span class="checkmark"></span>
-        200 - 300 ₽
-      </label>
-    </div>
-    <div class="filter-item">
-      <label class="custom-checkbox">
-        <input type="checkbox" name="price" value="over300">
-        <span class="checkmark"></span>
-        От 300 ₽
-      </label>
-    </div>
-    <div class="filter-item">
-      <label class="custom-checkbox">
-        <input type="checkbox" name="type" value="for_face">
-        <span class="checkmark"></span>
-        Для лица
-      </label>
-    </div>
-    <div class="filter-item">
-      <label class="custom-checkbox">
-        <input type="checkbox" name="type" value="for_body">
-        <span class="checkmark"></span>
-        Для тела
-      </label>
-    </div>
-    <div class="filter-item">
-      <label class="custom-checkbox">
-        <input type="checkbox" name="type" value="soothing">
-        <span class="checkmark"></span>
-        Успокаивающие
-      </label>
-    </div>
-    <div class="filter-item">
-      <label class="custom-checkbox">
-        <input type="checkbox" name="type" value="nourishing">
-        <span class="checkmark"></span>
-        Питательные
-      </label>
-    </div>
-  </div>
+    <!-- Хлебные крошки -->
+    <nav class="breadcrumbs" aria-label="Навигационная цепочка">
+      <a href="index.html">Главная</a> >
+      <span>Мыло</span>
+    </nav>
+    <!-- Конец хлебных крошек -->
 
-  <div class="sort-group">
-    <h3>Сортировка</h3>
-    <select id="sort-select" class="custom-select">
-      <option value="default">По умолчанию</option>
-      <option value="price-asc">Цена (по возрастанию)</option>
-      <option value="price-desc">Цена (по убыванию)</option>
-      <option value="name-asc">Название (А-Я)</option>
-      <option value="name-desc">Название (Я-А)</option>
-    </select>
-  </div>
-</div>
-<!-- Конец блока фильтров и сортировки -->
+    <!-- Блок фильтров и сортировки -->
+    <div class="filters-sorting">
+      <div class="filter-group">
+        <h3>Фильтры</h3>
+        <div class="filter-item">
+          <label class="custom-checkbox">
+            <input type="checkbox" name="price" value="under200">
+            <span class="checkmark"></span>
+            До 200 ₽
+          </label>
+        </div>
+        <div class="filter-item">
+          <label class="custom-checkbox">
+            <input type="checkbox" name="price" value="200to300">
+            <span class="checkmark"></span>
+            200 - 300 ₽
+          </label>
+        </div>
+        <div class="filter-item">
+          <label class="custom-checkbox">
+            <input type="checkbox" name="price" value="over300">
+            <span class="checkmark"></span>
+            От 300 ₽
+          </label>
+        </div>
+        <div class="filter-item">
+          <label class="custom-checkbox">
+            <input type="checkbox" name="type" value="for_face">
+            <span class="checkmark"></span>
+            Для лица
+          </label>
+        </div>
+        <div class="filter-item">
+          <label class="custom-checkbox">
+            <input type="checkbox" name="type" value="for_body">
+            <span class="checkmark"></span>
+            Для тела
+          </label>
+        </div>
+        <div class="filter-item">
+          <label class="custom-checkbox">
+            <input type="checkbox" name="type" value="soothing">
+            <span class="checkmark"></span>
+            Успокаивающие
+          </label>
+        </div>
+        <div class="filter-item">
+          <label class="custom-checkbox">
+            <input type="checkbox" name="type" value="nourishing">
+            <span class="checkmark"></span>
+            Питательные
+          </label>
+        </div>
+      </div>
+
+      <div class="sort-group">
+        <h3>Сортировка</h3>
+        <select id="sort-select" class="custom-select">
+          <option value="default">По умолчанию</option>
+          <option value="price-asc">Цена (по возрастанию)</option>
+          <option value="price-desc">Цена (по убыванию)</option>
+          <option value="name-asc">Название (А-Я)</option>
+          <option value="name-desc">Название (Я-А)</option>
+        </select>
+      </div>
+    </div>
+    <!-- Конец блока фильтров и сортировки -->
 
     <!-- Контейнер для товаров -->
     <div class="products" id="products-container">
       <!-- Карточки товаров -->
-      <!-- ВАЖНО: Добавим data-атрибуты для фильтрации -->
       <article class="product" data-price="270" data-type="for_face soothing">
         <img src="photos/mylo/kalendula.webp" alt="Мыло ручной работы 'Календула'">
         <div class="product-info">
@@ -225,8 +252,6 @@
           </div>
         </div>
       </article>
-
-      <!-- Добавь сюда больше карточек, не забывая про data-price и data-type -->
     </div> <!-- Закрывающий тег для #products-container -->
   </section>
 
