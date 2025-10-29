@@ -36,58 +36,72 @@
     <p>Выберите мыло по своим предпочтениям.</p>
 
     <!-- Блок фильтров и сортировки -->
-    <div class="filters-sorting">
-      <div class="filter-group">
-        <h3>Фильтры</h3>
-        <div class="filter-item">
-          <label>
-            <input type="checkbox" name="price" value="under200"> До 200 ₽
-          </label>
-        </div>
-        <div class="filter-item">
-          <label>
-            <input type="checkbox" name="price" value="200to300"> 200 - 300 ₽
-          </label>
-        </div>
-        <div class="filter-item">
-          <label>
-            <input type="checkbox" name="price" value="over300"> От 300 ₽
-          </label>
-        </div>
-        <div class="filter-item">
-          <label>
-            <input type="checkbox" name="type" value="for_face"> Для лица
-          </label>
-        </div>
-        <div class="filter-item">
-          <label>
-            <input type="checkbox" name="type" value="for_body"> Для тела
-          </label>
-        </div>
-        <div class="filter-item">
-          <label>
-            <input type="checkbox" name="type" value="soothing"> Успокаивающие
-          </label>
-        </div>
-        <div class="filter-item">
-          <label>
-            <input type="checkbox" name="type" value="nourishing"> Питательные
-          </label>
-        </div>
-      </div>
-
-      <div class="sort-group">
-        <h3>Сортировка</h3>
-        <select id="sort-select">
-          <option value="default">По умолчанию</option>
-          <option value="price-asc">Цена (по возрастанию)</option>
-          <option value="price-desc">Цена (по убыванию)</option>
-          <option value="name-asc">Название (А-Я)</option>
-          <option value="name-desc">Название (Я-А)</option>
-        </select>
-      </div>
+<div class="filters-sorting">
+  <div class="filter-group">
+    <h3>Фильтры</h3>
+    <div class="filter-item">
+      <label class="custom-checkbox">
+        <input type="checkbox" name="price" value="under200">
+        <span class="checkmark"></span>
+        До 200 ₽
+      </label>
     </div>
-    <!-- Конец блока фильтров и сортировки -->
+    <div class="filter-item">
+      <label class="custom-checkbox">
+        <input type="checkbox" name="price" value="200to300">
+        <span class="checkmark"></span>
+        200 - 300 ₽
+      </label>
+    </div>
+    <div class="filter-item">
+      <label class="custom-checkbox">
+        <input type="checkbox" name="price" value="over300">
+        <span class="checkmark"></span>
+        От 300 ₽
+      </label>
+    </div>
+    <div class="filter-item">
+      <label class="custom-checkbox">
+        <input type="checkbox" name="type" value="for_face">
+        <span class="checkmark"></span>
+        Для лица
+      </label>
+    </div>
+    <div class="filter-item">
+      <label class="custom-checkbox">
+        <input type="checkbox" name="type" value="for_body">
+        <span class="checkmark"></span>
+        Для тела
+      </label>
+    </div>
+    <div class="filter-item">
+      <label class="custom-checkbox">
+        <input type="checkbox" name="type" value="soothing">
+        <span class="checkmark"></span>
+        Успокаивающие
+      </label>
+    </div>
+    <div class="filter-item">
+      <label class="custom-checkbox">
+        <input type="checkbox" name="type" value="nourishing">
+        <span class="checkmark"></span>
+        Питательные
+      </label>
+    </div>
+  </div>
+
+  <div class="sort-group">
+    <h3>Сортировка</h3>
+    <select id="sort-select" class="custom-select">
+      <option value="default">По умолчанию</option>
+      <option value="price-asc">Цена (по возрастанию)</option>
+      <option value="price-desc">Цена (по убыванию)</option>
+      <option value="name-asc">Название (А-Я)</option>
+      <option value="name-desc">Название (Я-А)</option>
+    </select>
+  </div>
+</div>
+<!-- Конец блока фильтров и сортировки -->
 
     <!-- Контейнер для товаров -->
     <div class="products" id="products-container">
