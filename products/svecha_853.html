@@ -9,6 +9,7 @@
 </head>
 <body>
 
+<!-- ЕДИНЫЙ HEADER -->
 <header>
   <div class="header-top">
     <img src="../logo.webp" alt="ФроЛен ЕКБ" class="logo">
@@ -22,15 +23,17 @@
     <a href="../index.html">Главная</a>
     <a href="../mylo.html">Мыло</a>
     <a href="../probniki.html">Пробники</a>
-    <a href="../svechi.html">Свечи</a>
+    <a href="../pod_zakaz.html">Под заказ</a>
+    <a href="../svechi.html" class="active">Свечи</a>
     <a href="../dostavka.html">Доставка</a>
     <a href="../faq.html">Вопросы</a>
     <a href="../cart.html" class="cart-link">🛒 <span id="cart-count">0</span></a>
   </nav>
 </header>
 
+<!-- Основной контент -->
 <div class="container">
-  <div class="product-detail">
+  <div class="product-page">
     <img src="../photos/svechi/svecha_853.webp" alt="Свеча 8,53" style="width:100%; max-width:500px; border-radius:16px; margin-bottom:1.5rem; height: auto;">
 
     <h2>Свеча 8,53</h2>
@@ -44,6 +47,72 @@
 
     <a href="https://t.me/parentvoeimamy?text=Хочу%20заказать%20Свечу%208%2C53" class="btn" style="margin-top:1.5rem; display: inline-block;">Заказать</a>
   </div>
+
+  <!-- Блок "Похожие товары" -->
+  <div class="container">
+    <h2 class="section-title">Похожие товары</h2>
+    <div class="products">
+      <!-- Свеча 133 -->
+      <article class="product">
+        <a href="svecha_133.html">
+          <img src="../photos/svechi/svecha_133.webp" alt="Свеча 133">
+        </a>
+        <div class="product-info">
+          <h3><a href="svecha_133.html" style="color: inherit; text-decoration: none;">Свеча 133</a></h3>
+          <div class="price">200 ₽</div>
+          <p class="desc">Более высокая свеча для длительного горения. Высота 13 см, диаметр 3 см.</p>
+          <div class="product-actions">
+            <a href="svecha_133.html" class="btn-secondary">Подробнее</a>
+            <button class="btn-primary add-to-cart"
+                    data-id="svecha_133"
+                    data-name="Свеча 133"
+                    data-price="200"
+                    data-image="../photos/svechi/svecha_133.webp">В корзину</button>
+          </div>
+        </div>
+      </article>
+      <!-- Свеча 82 -->
+      <article class="product">
+        <a href="svecha_82.html">
+          <img src="../photos/svechi/svecha_82.webp" alt="Свеча 82">
+        </a>
+        <div class="product-info">
+          <h3><a href="svecha_82.html" style="color: inherit; text-decoration: none;">Свеча 82</a></h3>
+          <div class="price">100 ₽</div>
+          <p class="desc">Компактная свеча ручной работы. Высота 8 см, диаметр 2 см.</p>
+          <div class="product-actions">
+            <a href="svecha_82.html" class="btn-secondary">Подробнее</a>
+            <button class="btn-primary add-to-cart"
+                    data-id="svecha_82"
+                    data-name="Свеча 82"
+                    data-price="100"
+                    data-image="../photos/svechi/svecha_82.webp">В корзину</button>
+          </div>
+        </div>
+      </article>
+      <!-- Свеча 952 -->
+      <article class="product">
+        <a href="svecha_952.html">
+          <img src="../photos/svechi/svecha_952.webp" alt="Свеча 952">
+        </a>
+        <div class="product-info">
+          <h3><a href="svecha_952.html" style="color: inherit; text-decoration: none;">Свеча 952</a></h3>
+          <div class="price">150 ₽</div>
+          <p class="desc">Свеча ручной работы. Высота 9,5 см, диаметр 2 см.</p>
+          <div class="product-actions">
+            <a href="svecha_952.html" class="btn-secondary">Подробнее</a>
+            <button class="btn-primary add-to-cart"
+                    data-id="svecha_952"
+                    data-name="Свеча 952"
+                    data-price="150"
+                    data-image="../photos/svechi/svecha_952.webp">В корзину</button>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+  <!-- Конец блока "Похожие товары" -->
+
 </div>
 
 <footer>
@@ -54,6 +123,7 @@
   </p>
 </footer>
 
+<!-- Скрипт для корзины -->
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     const count = JSON.parse(localStorage.getItem('cart'))?.reduce((sum, item) => sum + item.quantity, 0) || 0;
