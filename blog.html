@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Блог — ФроЛен ЕКБ</title>
+  <link rel="icon" type="image/x-icon" href="/frolen-website/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/frolen-website/favicon.png">
+  <link rel="stylesheet" href="style.css">
+
+  <!-- OG-теги для блога -->
+  <meta property="og:title" content="Блог — ФроЛен ЕКБ">
+  <meta property="og:description" content="Полезные статьи о натуральном мыле ручной работы, уходе за кожей и ароматерапии от ФроЛен ЕКБ.">
+  <meta property="og:image" content="https://frolena.github.io/frolen-website/logo.webp">
+  <meta property="og:url" content="https://frolena.github.io/frolen-website/blog.html">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ru_RU">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Блог — ФроЛен ЕКБ">
+  <meta name="twitter:description" content="Полезные статьи о натуральном мыле ручной работы, уходе за кожей и ароматерапии от ФроЛен ЕКБ.">
+  <meta name="twitter:image" content="https://frolena.github.io/frolen-website/logo.webp">
+</head>
+<body>
+
+<header>
+  <div class="header-top">
+    <img src="logo.webp" alt="ФроЛен ЕКБ" class="logo">
+    <div class="branding">
+      <h1>🌿🧼 ФроЛен ЕКБ</h1>
+      <p class="subtitle">Натуральное мыло и свечи ручной работы</p>
+    </div>
+  </div>
+
+  <nav class="main-nav">
+    <a href="index.html">Главная</a>
+    <a href="mylo.html">Мыло</a>
+    <a href="probniki.html">Пробники</a>
+    <a href="pod_zakaz.html">Под заказ</a>
+    <a href="svechi.html">Свечи</a>
+    <a href="dostavka.html">Доставка</a>
+    <a href="faq.html">Вопросы</a>
+    <a href="blog.html" class="active">Блог</a> <!-- Активная ссылка -->
+    <a href="cart.html" class="cart-link">🛒 <span id="cart-count">0</span></a>
+  </nav>
+</header>
+
+<div class="container blog-container">
+  <h1 class="section-title">📖 Блог ФроЛен ЕКБ</h1>
+  <p class="blog-intro">Полезные статьи об уходе, натуральных ингредиентах и мире handmade.</p>
+
+  <!-- Список статей -->
+  <div class="blog-list">
+    <article class="blog-post-preview">
+      <h2 class="blog-post-title"><a href="blog/kak-vybrat-naturalnoe-mylo.html">Как выбрать натуральное мыло?</a></h2>
+      <p class="blog-post-meta">Опубликовано: 28 октября 2025</p>
+      <p class="blog-post-excerpt">Разбираемся, как отличить настоящее натуральное мыло от промышленного аналога. На что обращать внимание при покупке.</p>
+      <a href="blog/kak-vybrat-naturalnoe-mylo.html" class="btn btn-secondary">Читать далее</a>
+    </article>
+
+    <article class="blog-post-preview">
+      <h2 class="blog-post-title"><a href="blog/polza-masla-kalenduly.html">Польза масла календулы в косметике</a></h2>
+      <p class="blog-post-meta">Опубликовано: 28 октября 2025</p>
+      <p class="blog-post-excerpt">Узнайте, почему календула так ценится в натуральной косметике и как она помогает коже.</p>
+      <a href="blog/polza-masla-kalenduly.html" class="btn btn-secondary">Читать далее</a>
+    </article>
+
+    <article class="blog-post-preview">
+      <h2 class="blog-post-title"><a href="blog/kak-khranit-handmade-mylo.html">Как хранить мыло handmade?</a></h2>
+      <p class="blog-post-meta">Опубликовано: 28 октября 2025</p>
+      <p class="blog-post-excerpt">Правильное хранение мыла ручной работы поможет сохранить его аромат, текстуру и полезные свойства надолго.</p>
+      <a href="blog/kak-khranit-handmade-mylo.html" class="btn btn-secondary">Читать далее</a>
+    </article>
+
+    <!-- Добавь сюда больше превью статей -->
+  </div>
+</div>
+
+<footer>
+  <p>Хотите заказать или уточнить детали?</p>
+  <a href="https://t.me/Frolen_lm" class="btn" target="_blank">📩 Написать в Telegram</a>
+  <p class="footer-note">
+    Доставка по Екатеринбургу • Натуральный состав • Ручная работа
+  </p>
+</footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const count = JSON.parse(localStorage.getItem('cart'))?.reduce((sum, item) => sum + item.quantity, 0) || 0;
+    if (document.getElementById('cart-count')) {
+      document.getElementById('cart-count').textContent = count;
+    }
+  });
+</script>
+
+</body>
+</html>
