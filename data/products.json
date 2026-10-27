@@ -1,0 +1,15 @@
+{
+  "products": [
+    {
+      "id": "test-mylo",
+      "name": "Тестовое мыло",
+      "price": 250,
+      "category": "mylo",
+      "filters": "for_face soothing",
+      "image": "/images/products/test.webp",
+      "description": "Описание для проверки админки",
+      "composition": "Состав для проверки",
+      "recommendations": "Рекомендации для проверки"
+    }
+  ]
+}

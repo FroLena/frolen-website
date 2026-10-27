@@ -1,0 +1,23 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images/products"
+public_folder: "/images/products"
+
+collections:
+  - name: "products"
+    label: "Товары"
+    folder: "data"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "ID", name: "id", widget: "string", required: true}
+      - {label: "Название", name: "name", widget: "string", required: true}
+      - {label: "Цена", name: "price", widget: "number", required: true, min: 0}
+      - {label: "Категория", name: "category", widget: "select", required: true, options: ["mylo", "probniki", "svechi"]}
+      - {label: "Фильтры (data-type)", name: "filters", widget: "string", required: false, hint: "Например: for_face soothing"}
+      - {label: "Изображение", name: "image", widget: "image", required: true}
+      - {label: "Описание", name: "description", widget: "text", required: false}
+      - {label: "Состав", name: "composition", widget: "text", required: false}
+      - {label: "Рекомендации", name: "recommendations", widget: "text", required: false}
